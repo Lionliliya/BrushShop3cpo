@@ -2,89 +2,91 @@ package com.gmail.liliyayalovchenko.DAOImplementation;
 
 import com.gmail.liliyayalovchenko.DAO.AdministratorDAO;
 import com.gmail.liliyayalovchenko.Domains.Administrator;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
 import java.util.List;
 
 public class AdministratorDAOImpl implements AdministratorDAO {
 
     @Autowired
-    private EntityManager entityManager;
+    private SessionFactory sessionFactory;
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public String getAdminPassword(String role) {
-        String password;
-        Query query = entityManager.createQuery("SELECT a FROM Administrator a WHERE a.role =:var", Administrator.class);
-        query.setParameter("var", role);
-        Administrator admin = (Administrator)query.getResultList().get(0);
-        password = admin.getPassword();
-        return password;
+        Session session = sessionFactory.getCurrentSession();
+        Administrator administrator = (Administrator) session.createQuery
+                ("SELECT a FROM Administrator a WHERE a.role =:var")
+                .setParameter("var", role)
+                .uniqueResult();
+        return administrator.getPassword();
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public String getAdminUsername (String role) {
-        String username;
-        Query query = entityManager.createQuery("SELECT a FROM Administrator a WHERE a.role =:var", Administrator.class);
-        query.setParameter("var", role);
-        Administrator admin = (Administrator)query.getResultList().get(0);
-        username = admin.getUsername();
-        return username;
+        Session session = sessionFactory.getCurrentSession();
+        Administrator administrator = (Administrator) session.createQuery
+                ("SELECT a FROM Administrator a WHERE a.role =:var")
+                .setParameter("var", role)
+                .uniqueResult();
+        return administrator.getUsername();
     }
 
+    @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public Administrator getAdminByRole(String role) {
-        Query query = entityManager.createQuery("SELECT a FROM Administrator a WHERE a.role =:var", Administrator.class);
-        query.setParameter("var", role);
-        return (Administrator)query.getResultList().get(0);
+        Session session = sessionFactory.getCurrentSession();
+        Administrator administrator = (Administrator) session.createQuery
+                ("SELECT a FROM Administrator a WHERE a.role =:var")
+                .setParameter("var", role)
+                .uniqueResult();
+        return administrator;
     }
 
+    @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public Administrator getAdminById(int id) {
-        Query query = entityManager.createQuery("SELECT a FROM Administrator a WHERE a.id =:var", Administrator.class);
-        query.setParameter("var", id);
-        return (Administrator)query.getResultList().get(0);
+        Session session = sessionFactory.getCurrentSession();
+        Administrator administrator = session.load(Administrator.class, id);
+        return administrator;
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public List<Administrator> getAllUsers() {
-        Query query = entityManager.createQuery("SELECT a FROM Administrator a", Administrator.class);
-        return (List<Administrator>)query.getResultList();
+        Session currentSession = sessionFactory.getCurrentSession();
+        Query query = currentSession.createQuery("SELECT a FROM Administrator a");
+        return query.list();
     }
 
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public void saveAdmin(Administrator administrator) {
-        try {
-            entityManager.getTransaction().begin();
-            entityManager.persist(administrator);
-            entityManager.getTransaction().commit();
-        } catch (Exception ex) {
-            entityManager.getTransaction().rollback();
-            ex.printStackTrace();
-        }
+        sessionFactory.getCurrentSession().save(administrator);
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public void saveAdmin(int id, String role, String password, String username, String domainName, String emailAddress,
                           String phoneNumber1, String phoneNumber2) {
-        Query query = entityManager.createQuery("SELECT a FROM Administrator a  WHERE a.id =:var", Administrator.class);
-        query.setParameter("var", id);
-        Administrator resultAdministrator = (Administrator) query.getResultList().get(0);
-        try{
-            entityManager.getTransaction().begin();
-            resultAdministrator.setRole(role);
-            resultAdministrator.setPassword(password);
-            resultAdministrator.setUsername(username);
-            resultAdministrator.setDomainName(domainName);
-            resultAdministrator.setEmailAddress(emailAddress);
-            resultAdministrator.setPhoneNumber1(phoneNumber1);
-            resultAdministrator.setPhoneNumber2(phoneNumber2);
-            entityManager.getTransaction().commit();
-        }
-        catch(Exception e){
-            entityManager.getTransaction().rollback();
-            e.printStackTrace();
-        }
+
+        Session session = sessionFactory.getCurrentSession();
+        Administrator administrator = session.load(Administrator.class, id);
+        administrator.setRole(role);
+        administrator.setPassword(password);
+        administrator.setUsername(username);
+        administrator.setDomainName(domainName);
+        administrator.setEmailAddress(emailAddress);
+        administrator.setPhoneNumber1(phoneNumber1);
+        administrator.setPhoneNumber2(phoneNumber2);
+        session.update(administrator);
     }
 
 }

@@ -3,119 +3,107 @@ package com.gmail.liliyayalovchenko.DAOImplementation;
 import com.gmail.liliyayalovchenko.DAO.OrderDAO;
 import com.gmail.liliyayalovchenko.Domains.Order;
 import com.gmail.liliyayalovchenko.Domains.ProductInCart;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
 import java.util.Date;
 import java.util.List;
 
 public class OrderDAOImpl implements OrderDAO {
 
     @Autowired
-    private EntityManager entityManager;
+    private SessionFactory sessionFactory;
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public void deleteOrder(int id) {
-        Query query = entityManager.createQuery("SELECT a FROM Order a  WHERE a.id =:var", Order.class);
-        query.setParameter("var", id);
-        Order resultOrder = (Order) query.getResultList().get(0);
-        try{
-            entityManager.getTransaction().begin();
-            entityManager.remove(resultOrder);
-            entityManager.getTransaction().commit();
-        }
-        catch(Exception e){
-            entityManager.getTransaction().rollback();
-            e.printStackTrace();
-        }
-
+        Session session = sessionFactory.getCurrentSession();
+        Order order = session.load(Order.class, id);
+        session.delete(order);
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public Order getOrder(int id) {
-        Query query = entityManager.createQuery("SELECT a FROM Order a  WHERE a.id =:var", Order.class);
-        query.setParameter("var", id);
-        return (Order) query.getResultList().get(0);
+        Session session = sessionFactory.getCurrentSession();
+        Order order = session.load(Order.class, id);
+        return order;
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public void updateOrderAmount(int id, ProductInCart productInCart, boolean b) {
-        Query query = entityManager.createQuery("SELECT a FROM Order a  WHERE a.id =:var", Order.class);
-        query.setParameter("var", id);
-        Order resultOrder = (Order) query.getResultList().get(0);
-        int newAmount = b ? resultOrder.getTotalAmount() + productInCart.getQuantity()*productInCart.getPrice()
-                          : resultOrder.getTotalAmount() - productInCart.getQuantity()*productInCart.getPrice();
-        try{
-            entityManager.getTransaction().begin();
-            resultOrder.setTotalAmount(newAmount);
-            entityManager.getTransaction().commit();
-        }
-        catch(Exception e){
-            entityManager.getTransaction().rollback();
-            e.printStackTrace();
-        }
+        Session session = sessionFactory.getCurrentSession();
+        Order order = session.load(Order.class, id);
+        int newAmount = b ? order.getTotalAmount() + productInCart.getQuantity()*productInCart.getPrice()
+                          : order.getTotalAmount() - productInCart.getQuantity()*productInCart.getPrice();
+
+        order.setTotalAmount(newAmount);
+        session.update(order);
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public void saveOrder(int id, Date date, int totalAmount,  String delivery, String comments) {
-        Query query = entityManager.createQuery("SELECT a FROM Order a  WHERE a.id =:var", Order.class);
-        query.setParameter("var", id);
-        Order resultOrder = (Order) query.getResultList().get(0);
-        try{
-            entityManager.getTransaction().begin();
-            resultOrder.setDate(date);
-            resultOrder.setTotalAmount(totalAmount);
-            resultOrder.setDelivery(delivery);
-            resultOrder.setComments(comments);
-            entityManager.getTransaction().commit();
-        }
-        catch(Exception e){
-            entityManager.getTransaction().rollback();
-            e.printStackTrace();
-        }
+        Session session = sessionFactory.getCurrentSession();
+        Order order = session.load(Order.class, id);
+        order.setDate(date);
+        order.setTotalAmount(totalAmount);
+        order.setDelivery(delivery);
+        order.setComments(comments);
+        session.update(order);
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public void saveOrder(Order order) {
-        try {
-            entityManager.getTransaction().begin();
-            entityManager.persist(order);
-            entityManager.getTransaction().commit();
-        } catch (Exception ex) {
-            entityManager.getTransaction().rollback();
-            ex.printStackTrace();
-        }
+        Session session = sessionFactory.getCurrentSession();
+        session.save(order);
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public List<Order> getOrders() {
-        Query query = entityManager.createQuery("SELECT a FROM Order a", Order.class);
-        return (List<Order>)query.getResultList();
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("SELECT a FROM Order a");
+        return query.list();
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public List<Order> getAllOrdersByClient(int id) {
-        Query query = entityManager.createQuery("SELECT o FROM Order o where o.client.id =:var", Order.class);
-        query.setParameter("var", id);
-        return (List<Order>)query.getResultList();
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery
+                ("SELECT o FROM Order o where o.client.id =:var")
+                .setParameter("var", id);
+        return query.list();
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public List<Order> getSortedByDateUp() {
-        Query query = entityManager.createQuery("SELECT o FROM Order o order by o.date desc ", Order.class);
-        return (List<Order>)query.getResultList();
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("SELECT o FROM Order o order by o.date desc ");
+        return query.list();
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public List<Order> getSortedByDateDown() {
-        Query query = entityManager.createQuery("SELECT o FROM Order o order by o.date asc", Order.class);
-        return (List<Order>)query.getResultList();
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("SELECT o FROM Order o order by o.date asc");
+        return query.list();
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public List<Order> getSortedByAmountDown() {
-        Query query = entityManager.createQuery("SELECT o FROM Order o order by o.totalAmount desc", Order.class);
-        return (List<Order>)query.getResultList();
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("SELECT o FROM Order o order by o.totalAmount desc");
+        return query.list();
     }
 }

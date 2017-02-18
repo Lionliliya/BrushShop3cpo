@@ -6,6 +6,7 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 import org.springframework.context.annotation.*;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
+import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
@@ -123,6 +124,13 @@ public class AppConfig extends WebMvcConfigurerAdapter {
     }
 
     @Bean
+    public HibernateTransactionManager tx() {
+        HibernateTransactionManager tx = new HibernateTransactionManager();
+        tx.setSessionFactory(sessionFactory().getObject());
+        return tx;
+    }
+
+    @Bean
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
@@ -142,7 +150,14 @@ public class AppConfig extends WebMvcConfigurerAdapter {
         properties.setProperty("hibernate.show_sql", environment.getProperty("hibernate.show_sql"));
         properties.setProperty("hibernate.format_sql", environment.getProperty("hibernate.format.sql"));
         properties.setProperty("hibernate.use_sql_comments", environment.getProperty("hibernate.use.sql.comments"));
-
+        properties.setProperty("hibernate.connection.characterEncoding", environment.getProperty("hibernate.connection.characterEncoding"));
+        properties.setProperty("hibernate.connection.useUnicode", environment.getProperty("hibernate.connection.useUnicode"));
+        properties.setProperty("hibernate.connection.charSet", environment.getProperty("hibernate.connection.charSet"));
+        properties.setProperty("hibernate.connection.validationInterval", environment.getProperty("hibernate.connection.validationInterval"));
+        properties.setProperty("hibernate.connection.validationQuery", environment.getProperty("hibernate.connection.validationQuery"));
+        properties.setProperty("hibernate.connection.testOnBorrow", environment.getProperty("hibernate.connection.testOnBorrow"));
+        properties.setProperty("hibernate.connection.wait_timeout", environment.getProperty("hibernate.connection.wait_timeout"));
+        properties.setProperty("hibernate.connection.interactive_timeout", environment.getProperty("hibernate.connection.interactive_timeout"));
         return properties;
     }
 

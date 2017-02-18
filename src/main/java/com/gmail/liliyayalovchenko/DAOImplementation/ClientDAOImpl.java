@@ -2,106 +2,98 @@ package com.gmail.liliyayalovchenko.DAOImplementation;
 
 import com.gmail.liliyayalovchenko.DAO.ClientDAO;
 import com.gmail.liliyayalovchenko.Domains.Client;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
 import java.util.List;
 
 public class ClientDAOImpl implements ClientDAO {
 
     @Autowired
-    private EntityManager entityManager;
+    private SessionFactory sessionFactory;
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public List<Client> getClients() {
-        Query query = entityManager.createQuery("SELECT a FROM Client a", Client.class);
-        return (List<Client>) query.getResultList();
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("SELECT c FROM Client c");
+        return query.list();
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public List<Client> getSortedByName() {
-        Query query = entityManager.createQuery("SELECT c FROM Client c order by c.firstName", Client.class);
-        return (List<Client>) query.getResultList();
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("SELECT c FROM Client c order by c.firstName");
+        return query.list();
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public List<Client> getSortedByEmail() {
-        Query query = entityManager.createQuery("SELECT c FROM Client c order by c.email", Client.class);
-        return (List<Client>) query.getResultList();
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("SELECT c FROM Client c order by c.email");
+        return query.list();
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public Client getClient(int id) {
-        Query query = entityManager.createQuery("SELECT a FROM Client a  WHERE a.id =:var", Client.class);
-        query.setParameter("var", id);
-        return (Client) query.getResultList().get(0);
+        Session session = sessionFactory.getCurrentSession();
+        Client client = session.load(Client.class, id);
+        return client;
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public Client findClientByPhone(String phone, String email) {
-        Query query = entityManager.createQuery("SELECT a FROM Client a WHERE  a.phoneNumber =:var2 and a.email =:var1",
-                Client.class);
-        query.setParameter("var2", phone);
-        query.setParameter("var1", email);
-        List<Client> resultList = query.getResultList();
-        if (resultList.size() != 0) {
-            return resultList.get(0);
-        }
-        return null;
+        Session session = sessionFactory.getCurrentSession();
+        Client client = (Client) session.createQuery
+                ("SELECT a FROM Client a WHERE  a.phoneNumber =:var2 and a.email =:var1")
+                .setParameter("var2", phone)
+                .setParameter("var1", email).uniqueResult();
+
+        return client;
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public Client findClientByEmail(String email) {
-        Query query = entityManager.createQuery("SELECT a FROM Client a WHERE  a.email =:var1",
-                Client.class);
-        query.setParameter("var1", email);
-        return (Client) query.getResultList().get(0);
+        Session session = sessionFactory.getCurrentSession();
+        Client client = (Client) session.createQuery
+                ("SELECT a FROM Client a WHERE  a.email =:pattern")
+                .setParameter("pattern", email)
+                .uniqueResult();
+        return client;
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public void saveClient(int id, String name, String phone, String email) {
-        Query query = entityManager.createQuery("SELECT a FROM Client a  WHERE a.id =:var", Client.class);
-        query.setParameter("var", id);
-        Client resultClient = (Client) query.getResultList().get(0);
-        try{
-            entityManager.getTransaction().begin();
-            resultClient.setFirstName(name);
-            resultClient.setPhoneNumber(phone);
-            resultClient.setEmail(email);
-            entityManager.getTransaction().commit();
-        }
-        catch(Exception ex){
-            entityManager.getTransaction().rollback();
-            ex.printStackTrace();
-        }
+        Session session = sessionFactory.getCurrentSession();
+        Client client = session.load(Client.class, id);
+        client.setFirstName(name);
+        client.setPhoneNumber(phone);
+        client.setEmail(email);
+        session.save(client);
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public void addClient(Client client) {
-        try{
-            entityManager.getTransaction().begin();
-            entityManager.persist(client);
-            entityManager.getTransaction().commit();
-        }
-        catch(Exception ex){
-            entityManager.getTransaction().rollback();
-            ex.printStackTrace();
-        }
-
+        Session session = sessionFactory.getCurrentSession();
+        session.update(client);
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public void remove(Client client) {
-        try{
-            entityManager.getTransaction().begin();
-            entityManager.remove(client);
-            entityManager.getTransaction().commit();
-        }
-        catch(Exception ex){
-            entityManager.getTransaction().rollback();
-            ex.printStackTrace();
-        }
+        Session session = sessionFactory.getCurrentSession();
+        session.delete(client);
     }
 
 }

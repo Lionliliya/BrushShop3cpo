@@ -2,82 +2,71 @@ package com.gmail.liliyayalovchenko.DAOImplementation;
 
 import com.gmail.liliyayalovchenko.DAO.CategoryDAO;
 import com.gmail.liliyayalovchenko.Domains.Category;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
+import org.hibernate.query.Query;
 import java.util.List;
 
 public class CategoryDAOImpl implements CategoryDAO {
 
     @Autowired
-    private EntityManager entityManager;
+    private SessionFactory sessionFactory;
 
     @Override
-    public Category getCategoryByName(String  category) {
-        Query query = entityManager.createQuery("SELECT a FROM Category a WHERE a.name =:pattern", Category.class);
-        query.setParameter("pattern", category);
-        return  (Category)query.getResultList().get(0);
+    @Transactional(propagation = Propagation.MANDATORY)
+    public Category getCategoryByName(String  categoryName) {
+        Session session = sessionFactory.getCurrentSession();
+        Category category = (Category) session.createQuery
+                ("SELECT a FROM Category a WHERE a.name =:pattern")
+                .setParameter("pattern", categoryName)
+                .uniqueResult();
+        return  category;
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public Category getCategoryById(int id) {
-        Query query = entityManager.createQuery("SELECT a FROM Category a WHERE a.id =:var", Category.class);
-        query.setParameter("var", id);
-        return (Category)query.getResultList().get(0);
+        Session session = sessionFactory.getCurrentSession();
+        Category category = session.load(Category.class, id);
+        return category;
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public void saveCategory(Category category) {
-        try {
-            entityManager.getTransaction().begin();
-            entityManager.persist(category);
-            entityManager.getTransaction().commit();
-        } catch (Exception ex) {
-            entityManager.getTransaction().rollback();
-            ex.printStackTrace();
-        }
+        sessionFactory.getCurrentSession().save(category);
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public void saveCategory(int id, String name, String info, String metaDescription, String metaKeyWords, String metaTitle) {
-        Query query = entityManager.createQuery("SELECT a FROM Category a  WHERE a.id =:var", Category.class);
-        query.setParameter("var", id);
-        Category resultCategory = (Category) query.getResultList().get(0);
-        try{
-            entityManager.getTransaction().begin();
-            resultCategory.setName(name);
-            resultCategory.setInfo(info);
-            resultCategory.setMetaDescription(metaDescription);
-            resultCategory.setMetaKeyWords(metaKeyWords);
-            resultCategory.setMetaTitle(metaTitle);
-            entityManager.getTransaction().commit();
-        }
-        catch(Exception e){
-            entityManager.getTransaction().rollback();
-            e.printStackTrace();
-        }
+        Session session = sessionFactory.getCurrentSession();
+        Category category = session.load(Category.class, id);
+        category.setName(name);
+        category.setInfo(info);
+        category.setMetaDescription(metaDescription);
+        category.setMetaKeyWords(metaKeyWords);
+        category.setMetaTitle(metaTitle);
+        session.update(category);
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public List<Category> getAllCategories() {
-        Query query = entityManager.createQuery("SELECT a FROM Category a", Category.class);
-        return (List<Category>)query.getResultList();
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("SELECT c FROM Category c");
+        return query.list();
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public void remove(int id) {
-        Query query = entityManager.createQuery("SELECT a FROM Category a where a.id = :var", Category.class);
-        query.setParameter("var", id);
-        Category resultCategory = (Category) query.getResultList().get(0);
-        try{
-            entityManager.getTransaction().begin();
-            entityManager.remove(resultCategory);
-            entityManager.getTransaction().commit();
-        }
-        catch(Exception e){
-            entityManager.getTransaction().rollback();
-            e.printStackTrace();
-        }
+        Session session = sessionFactory.getCurrentSession();
+        Category category = session.load(Category.class, id);
+        session.delete(category);
     }
 }

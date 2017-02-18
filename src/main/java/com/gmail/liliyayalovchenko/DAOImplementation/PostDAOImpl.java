@@ -2,136 +2,134 @@ package com.gmail.liliyayalovchenko.DAOImplementation;
 
 import com.gmail.liliyayalovchenko.DAO.PostDAO;
 import com.gmail.liliyayalovchenko.Domains.Post;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
 import java.util.Date;
 import java.util.List;
 
 public class PostDAOImpl implements PostDAO {
 
     @Autowired
-    private EntityManager entityManager;
+    private SessionFactory sessionFactory;
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public List<Post> getAllPosts() {
-        Query query = entityManager.createQuery("SELECT a FROM Post a", Post.class);
-        return (List<Post>)query.getResultList();
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("SELECT a FROM Post a");
+        return query.list();
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public Post get(int id) {
-        Query query = entityManager.createQuery("SELECT a FROM Post a WHERE a.id =:var", Post.class);
-        query.setParameter("var", id);
-        return (Post)query.getResultList().get(0);
+        Session session = sessionFactory.getCurrentSession();
+        Post post = session.load(Post.class, id);
+        return post;
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public Post get(String title) {
-        Query query = entityManager.createQuery("SELECT a FROM Post a WHERE a.id =:var", Post.class);
-        query.setParameter("var", title);
-        return (Post)query.getResultList().get(0);
+        Session session = sessionFactory.getCurrentSession();
+        Post post = (Post) session.createQuery
+                ("SELECT a FROM Post a WHERE a.id =:var")
+                .setParameter("var", title)
+                .uniqueResult();
+        return post;
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public List<Post> getAllPostAsc() {
-        Query query = entityManager.createQuery("SELECT a FROM Post a ORDER BY a.dateOfPublication",
-                Post.class);
-        return (List<Post>)query.getResultList();
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("SELECT a FROM Post a ORDER BY a.dateOfPublication");
+        return query.list();
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public List<Post> getAllPostsDesc() {
-        Query query = entityManager.createQuery("SELECT a FROM Post a ORDER BY a.dateOfPublication DESC ",
-                Post.class);
-        return (List<Post>)query.getResultList();
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("SELECT a FROM Post a ORDER BY a.dateOfPublication DESC ");
+        return query.list();
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public List<Post> getAllPostsNameUp() {
-        Query query = entityManager.createQuery("SELECT a FROM Post a ORDER BY a.title",
-                Post.class);
-        return (List<Post>)query.getResultList();
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("SELECT a FROM Post a ORDER BY a.title");
+        return query.list();
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public List<Post> getAllPostsNameDown() {
-        Query query = entityManager.createQuery("SELECT a FROM Post a ORDER BY a.title DESC ",
-                Post.class);
-        return (List<Post>)query.getResultList();
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("SELECT a FROM Post a ORDER BY a.title DESC ");
+        return query.list();
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public List<Post> getNextPosts(Integer startRow) {
-        Query query = entityManager.createQuery("SELECT a FROM Post a order by a.dateOfPublication desc",
-                Post.class);
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("SELECT a FROM Post a order by a.dateOfPublication desc");
         if (startRow == 1) {
-            return query.setFirstResult(0).setMaxResults(3).getResultList();
+            return query.setFirstResult(0).setMaxResults(3).list();
         }
-        return query.setFirstResult(startRow - 1).setMaxResults(3).getResultList();
+        return query.setFirstResult(startRow - 1).setMaxResults(3).list();
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public void save(Post article) {
-        try {
-            entityManager.getTransaction().begin();
-            entityManager.persist(article);
-            entityManager.getTransaction().commit();
-        } catch (Exception ex) {
-            entityManager.getTransaction().rollback();
-            ex.printStackTrace();
-        }
+        Session session = sessionFactory.getCurrentSession();
+        session.save(article);
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public void remove(int id) {
-        Query query = entityManager.createQuery("SELECT a FROM Post a  WHERE a.id =:var", Post.class);
-        query.setParameter("var", id);
-        Post infoToDelete = (Post) query.getResultList().get(0);
-        try{
-            entityManager.getTransaction().begin();
-            entityManager.remove(infoToDelete);
-            entityManager.getTransaction().commit();
-        }
-        catch(Exception e){
-            entityManager.getTransaction().rollback();
-            e.printStackTrace();
-        }
+        Session session = sessionFactory.getCurrentSession();
+        Post post = (Post) session.createQuery
+                ("SELECT a FROM Post a  WHERE a.id =:var")
+                .setParameter("var", id)
+                .uniqueResult();
+        session.delete(post);
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public void save(int id, String title, String imagePath, String shortDescription, Date dateOfPublication,
                      String buttonText, String content, String metaDescription, String metaKeyWords, String metaTitle) {
 
-        Query query = entityManager.createQuery("SELECT a FROM Post a  WHERE a.id =:var", Post.class);
-        query.setParameter("var", id);
-        Post infoToSave = (Post) query.getResultList().get(0);
-        try{
-            entityManager.getTransaction().begin();
-            infoToSave.setTitle(title);
-            infoToSave.setImagePath(imagePath);
-            infoToSave.setShortDescription(shortDescription);
-            infoToSave.setDateOfPublication(dateOfPublication);
-            infoToSave.setButtonText(buttonText);
-            infoToSave.setContent(content);
-            infoToSave.setMetaDescription(metaDescription);
-            infoToSave.setMetaKeyWords(metaKeyWords);
-            infoToSave.setMetaTitle(metaTitle);
-            entityManager.getTransaction().commit();
-        }
-        catch(Exception e){
-            entityManager.getTransaction().rollback();
-            e.printStackTrace();
-        }
-
-
+        Session session = sessionFactory.getCurrentSession();
+        Post post = session.load(Post.class, id);
+        post.setTitle(title);
+        post.setImagePath(imagePath);
+        post.setShortDescription(shortDescription);
+        post.setDateOfPublication(dateOfPublication);
+        post.setButtonText(buttonText);
+        post.setContent(content);
+        post.setMetaDescription(metaDescription);
+        post.setMetaKeyWords(metaKeyWords);
+        post.setMetaTitle(metaTitle);
+        session.update(post);
     }
 
     @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public List<Post> getTwoLatest() {
-        Query query = entityManager.createQuery("SELECT i from Post i order by id DESC");
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("SELECT i from Post i order by i.id DESC");
         query.setMaxResults(2);
-        return query.getResultList();
+        return query.list();
     }
 }
