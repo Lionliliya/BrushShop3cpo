@@ -170,6 +170,11 @@ public class ProductDAOImpl implements ProductDAO {
         Session session = sessionFactory.getCurrentSession();
 
         Product resultProduct = session.load(Product.class, id);
+        updateProduct(name, price, currency, productCategory, amount, inStock, description, shortDesc, metaDescription, metaKeyWords, metaTitle, image1, image2, image3, image4, isNew, discount, brand, resultProduct);
+        session.update(resultProduct);
+    }
+
+    private void updateProduct(String name, int price, String currency, Category productCategory, int amount, String inStock, String description, String shortDesc, String metaDescription, String metaKeyWords, String metaTitle, String image1, String image2, String image3, String image4, boolean isNew, int discount, String brand, Product resultProduct) {
         resultProduct.setName(name);
         resultProduct.setPrice(price);
         resultProduct.setCurrency(currency);
@@ -188,7 +193,6 @@ public class ProductDAOImpl implements ProductDAO {
         resultProduct.setIsNew(isNew);
         resultProduct.setDiscount(discount);
         resultProduct.setBrand(brand);
-        session.update(resultProduct);
     }
 
     @Override
