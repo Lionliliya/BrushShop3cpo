@@ -1,13 +1,13 @@
 package com.gmail.liliyayalovchenko.Controllers;
 
-import com.gmail.liliyayalovchenko.DAO.CategoryDAO;
-import com.gmail.liliyayalovchenko.DAO.ClientDAO;
-import com.gmail.liliyayalovchenko.DAO.FeedBackDAO;
-import com.gmail.liliyayalovchenko.DAO.ProductDAO;
 import com.gmail.liliyayalovchenko.Domains.Client;
 import com.gmail.liliyayalovchenko.Domains.FeedBack;
 import com.gmail.liliyayalovchenko.Domains.Product;
 import com.gmail.liliyayalovchenko.Domains.ProductInCart;
+import com.gmail.liliyayalovchenko.Services.CategoryService;
+import com.gmail.liliyayalovchenko.Services.ClientService;
+import com.gmail.liliyayalovchenko.Services.FeedBackService;
+import com.gmail.liliyayalovchenko.Services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,16 +29,16 @@ public class ProductController {
 
 
     @Autowired
-    private ProductDAO productDAO;
+    private ProductService productService;
 
     @Autowired
-    private CategoryDAO categoryDAO;
+    private CategoryService categoryService;
 
     @Autowired
-    private ClientDAO clientDAO;
+    private ClientService clientService;
 
     @Autowired
-    private FeedBackDAO feedBackDAO;
+    private FeedBackService feedBackService;
 
     @RequestMapping("/catalog")
     public ModelAndView catalog(HttpServletRequest request) {
@@ -46,10 +46,10 @@ public class ProductController {
         checkSession(session);
 
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("categories", categoryDAO.getAllCategories());
-        modelAndView.addObject("products", productDAO.getAllProducts());
+        modelAndView.addObject("categories", categoryService.getAllCategories());
+        modelAndView.addObject("products", productService.getAllProducts());
         modelAndView.addObject("cartSize", session.getAttribute("cartSize"));
-        modelAndView.addObject("brands", productDAO.getAllBrands());
+        modelAndView.addObject("brands", productService.getAllBrands());
         modelAndView.setViewName("catalog");
         return modelAndView;
     }
@@ -60,10 +60,10 @@ public class ProductController {
         checkSession(session);
 
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("categories", categoryDAO.getAllCategories());
-        modelAndView.addObject("products", productDAO.getAllProductsOnSale());
+        modelAndView.addObject("categories", categoryService.getAllCategories());
+        modelAndView.addObject("products", productService.getAllProductsOnSale());
         modelAndView.addObject("cartSize", session.getAttribute("cartSize"));
-        modelAndView.addObject("brands", productDAO.getAllBrands());
+        modelAndView.addObject("brands", productService.getAllBrands());
         modelAndView.setViewName("sale");
         return modelAndView;
     }
@@ -80,14 +80,14 @@ public class ProductController {
         List<Product> filteredProducts = new ArrayList<>();
 
         for (String s : brandsForFiltering) {
-            filteredProducts.addAll(productDAO.getProductsByBrand(s));
+            filteredProducts.addAll(productService.getProductsByBrand(s));
         }
 
-        modelAndView.addObject("categories", categoryDAO.getAllCategories());
+        modelAndView.addObject("categories", categoryService.getAllCategories());
         modelAndView.addObject("products", filteredProducts);
         modelAndView.addObject("cartSize", session.getAttribute("cartSize"));
         modelAndView.addObject("activeBrands", brandsForFiltering);
-        modelAndView.addObject("brands", productDAO.getAllBrands());
+        modelAndView.addObject("brands", productService.getAllBrands());
         modelAndView.setViewName("catalog");
         return modelAndView;
     }
@@ -97,10 +97,10 @@ public class ProductController {
         HttpSession session = request.getSession();
         checkSession(session);
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("categories", categoryDAO.getAllCategories());
-        modelAndView.addObject("products", productDAO.getAllPriceDown());
+        modelAndView.addObject("categories", categoryService.getAllCategories());
+        modelAndView.addObject("products", productService.getAllPriceDown());
         modelAndView.addObject("cartSize", session.getAttribute("cartSize"));
-        modelAndView.addObject("brands", productDAO.getAllBrands());
+        modelAndView.addObject("brands", productService.getAllBrands());
         modelAndView.setViewName("catalog");
         return modelAndView;
     }
@@ -110,10 +110,10 @@ public class ProductController {
         HttpSession session = request.getSession();
         checkSession(session);
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("categories", categoryDAO.getAllCategories());
-        modelAndView.addObject("products", productDAO.getAllPriceUp());
+        modelAndView.addObject("categories", categoryService.getAllCategories());
+        modelAndView.addObject("products", productService.getAllPriceUp());
         modelAndView.addObject("cartSize", session.getAttribute("cartSize"));
-        modelAndView.addObject("brands", productDAO.getAllBrands());
+        modelAndView.addObject("brands", productService.getAllBrands());
         modelAndView.setViewName("catalog");
         return modelAndView;
     }
@@ -129,7 +129,7 @@ public class ProductController {
                              HttpServletRequest request) {
         HttpSession session = request.getSession();
         checkSession(session);
-        Product product = productDAO.getProductById(id);
+        Product product = productService.getProductById(id);
         ProductInCart productInCart = new ProductInCart(product, category, smallimage, name, price, currency, 1);
 
         ArrayList<ProductInCart> productsInCart = (ArrayList<ProductInCart>) session.getAttribute("ProductsInCart");
@@ -138,8 +138,8 @@ public class ProductController {
         session.setAttribute("cartSize", productsInCart.size());
 
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("brands", productDAO.getAllBrands());
-        modelAndView.addObject("categories", categoryDAO.getAllCategories());
+        modelAndView.addObject("brands", productService.getAllBrands());
+        modelAndView.addObject("categories", categoryService.getAllCategories());
         modelAndView.addObject("ProductsInCart", session.getAttribute("ProductsInCart"));
         modelAndView.addObject("totalValue", totalAmount(session));
         modelAndView.addObject("cartSize", session.getAttribute("cartSize"));
@@ -152,8 +152,8 @@ public class ProductController {
         HttpSession session = request.getSession();
         checkSession(session);
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("categories", categoryDAO.getAllCategories());
-        modelAndView.addObject("brands", productDAO.getAllBrands());
+        modelAndView.addObject("categories", categoryService.getAllCategories());
+        modelAndView.addObject("brands", productService.getAllBrands());
         modelAndView.addObject("ProductsInCart", session.getAttribute("ProductsInCart"));
         modelAndView.addObject("totalValue", totalAmount(session));
         modelAndView.addObject("cartSize", session.getAttribute("cartSize"));
@@ -167,10 +167,10 @@ public class ProductController {
         HttpSession session = request.getSession();
         checkSession(session);
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("categories", categoryDAO.getAllCategories());
-        modelAndView.addObject("product", productDAO.getProductById(id));
+        modelAndView.addObject("categories", categoryService.getAllCategories());
+        modelAndView.addObject("product", productService.getProductById(id));
         modelAndView.addObject("cartSize", session.getAttribute("cartSize"));
-        modelAndView.addObject("brands", productDAO.getAllBrands());
+        modelAndView.addObject("brands", productService.getAllBrands());
         modelAndView.setViewName("product");
         return modelAndView;
     }
@@ -186,23 +186,23 @@ public class ProductController {
         checkSession(session);
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("product");
-        Product product = productDAO.getProductById(id);
+        Product product = productService.getProductById(id);
         Client client;
         try {
-            client = clientDAO.findClientByEmail(email);
+            client = clientService.findClientByEmail(email);
             FeedBack feedBack = new FeedBack(product, new Date(), client, evaluation, feedback);
             product.addFeedBack(feedBack);
-            feedBackDAO.saveFeedBack(feedBack);
-            productDAO.updateProduct(product);
+            feedBackService.saveFeedBack(feedBack);
+            productService.updateProduct(product);
         } catch (IndexOutOfBoundsException ex) {
             modelAndView.addObject("message", "Ой-ой...Отзывы могуть оставлять только клиенты. " +
                     "К сожалению, Вы не сделали ни одного заказа у нас.");
         }
 
 
-        modelAndView.addObject("categories", categoryDAO.getAllCategories());
-        modelAndView.addObject("product", productDAO.getProductById(id));
-        modelAndView.addObject("brands", productDAO.getAllBrands());
+        modelAndView.addObject("categories", categoryService.getAllCategories());
+        modelAndView.addObject("product", productService.getProductById(id));
+        modelAndView.addObject("brands", productService.getAllBrands());
         modelAndView.addObject("cartSize", session.getAttribute("cartSize"));
         return modelAndView;
     }
@@ -212,14 +212,14 @@ public class ProductController {
         HttpSession session = request.getSession();
         checkSession(session);
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("categories", categoryDAO.getAllCategories());
-        List<Product> productList = productDAO.search(pattern);
+        modelAndView.addObject("categories", categoryService.getAllCategories());
+        List<Product> productList = productService.search(pattern);
         if (productList == null) {
             modelAndView.addObject("size", 0);
         } else {
             modelAndView.addObject("products", productList);
         }
-        modelAndView.addObject("brands", productDAO.getAllBrands());
+        modelAndView.addObject("brands", productService.getAllBrands());
         modelAndView.addObject("cartSize", session.getAttribute("cartSize"));
         modelAndView.setViewName("search");
         return modelAndView;

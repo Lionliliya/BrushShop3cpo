@@ -1,9 +1,9 @@
 package com.gmail.liliyayalovchenko.Controllers;
 
-import com.gmail.liliyayalovchenko.DAO.*;
 import com.gmail.liliyayalovchenko.Domains.Client;
 import com.gmail.liliyayalovchenko.Domains.Order;
 import com.gmail.liliyayalovchenko.Domains.ProductInCart;
+import com.gmail.liliyayalovchenko.Services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -27,19 +27,19 @@ import java.util.*;
 public class OrderController {
 
     @Autowired
-    private OrderDAO orderDAO;
+    private OrderService orderService;
 
     @Autowired
-    private CategoryDAO categoryDAO;
+    private CategoryService categoryService;
 
     @Autowired
-    private ProductInCartDAO productInCartDAO;
+    private ProductInCartService productInCartService;
 
     @Autowired
-    private ProductDAO productDAO;
+    private ProductService productService;
 
     @Autowired
-    private ClientDAO clientDAO;
+    private ClientService clientService;
 
     @RequestMapping(value = "/updateCart", method = RequestMethod.POST)
     public ModelAndView updateCart(HttpServletRequest request) {
@@ -61,10 +61,10 @@ public class OrderController {
             n++;
         }
         modelAndView.addObject("totalValue", totalValue);
-        modelAndView.addObject("categories", categoryDAO.getAllCategories());
+        modelAndView.addObject("categories", categoryService.getAllCategories());
         modelAndView.addObject("ProductsInCart", productsCart);
         modelAndView.addObject("cartSize", productsCart.size());
-        modelAndView.addObject("brands", productDAO.getAllBrands());
+        modelAndView.addObject("brands", productService.getAllBrands());
         session.setAttribute("ProductsInCart", productsCart);
         session.setAttribute("cartSize", productsCart.size());
 
@@ -97,11 +97,11 @@ public class OrderController {
 
         List<ProductInCart> productsInCart = (ArrayList<ProductInCart>) session.getAttribute("ProductsInCart");
 
-        Client client = clientDAO.findClientByPhone(phoneNumber, email);
+        Client client = clientService.findClientByPhone(phoneNumber, email);
         if (client == null) {
             client = new Client(firstName, phoneNumber, email);
         }
-        clientDAO.addClient(client);
+        clientService.addClient(client);
         int amount = 0;
         for (ProductInCart aProductsCart1 : productsInCart) {
             amount += aProductsCart1.getPrice()*aProductsCart1.getQuantity();
@@ -110,15 +110,15 @@ public class OrderController {
         for (ProductInCart product : productsInCart) {
             product.setOrder(order);
         }
-        orderDAO.saveOrder(order);
-        productInCartDAO.saveProductInCart(productsInCart);
+        orderService.saveOrder(order);
+        productInCartService.saveProductInCart(productsInCart);
 
         sendClientMail(productsInCart, firstName, email, delivery, order.getId(), amount);
 
         modelAndView.addObject("client", client);
-        modelAndView.addObject("categories", categoryDAO.getAllCategories());
+        modelAndView.addObject("categories", categoryService.getAllCategories());
         modelAndView.addObject("ProductsInCart", productsInCart);
-        modelAndView.addObject("brands", productDAO.getAllBrands());
+        modelAndView.addObject("brands", productService.getAllBrands());
         modelAndView.addObject("order", order);
         modelAndView.addObject("totalAmount", amount);
         session.removeAttribute("ProductsInCart");

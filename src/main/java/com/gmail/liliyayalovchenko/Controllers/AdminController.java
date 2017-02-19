@@ -1,7 +1,7 @@
 package com.gmail.liliyayalovchenko.Controllers;
 
-import com.gmail.liliyayalovchenko.DAO.*;
 import com.gmail.liliyayalovchenko.Domains.*;
+import com.gmail.liliyayalovchenko.Services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -22,28 +22,28 @@ import java.util.*;
 public class AdminController {
 
     @Autowired
-    private AdministratorDAO administratorDAO;
+    private AdministratorService administratorService;
 
     @Autowired
-    private OrderDAO orderDAO;
+    private OrderService orderService;
 
     @Autowired
-    private ProductDAO productDAO;
+    private ProductService productService;
 
     @Autowired
-    private ProductInCartDAO productInCartDAO;
+    private ProductInCartService productInCartService;
 
     @Autowired
-    private CategoryDAO categoryDAO;
+    private CategoryService categoryService;
 
     @Autowired
-    private PostDAO postDAO;
+    private PostService postService;
 
     @Autowired
-    private ClientDAO clientDAO;
+    private ClientService clientService;
 
     @Autowired
-    private FeedBackDAO feedBackDAO;
+    private FeedBackService feedBackService;
 
     @RequestMapping("/")
     public ModelAndView main(HttpServletRequest request) {
@@ -51,9 +51,9 @@ public class AdminController {
         ModelAndView modelAndView = new ModelAndView();
         if (checkStatus(session)) {
             modelAndView.setViewName("adminIndex");
-            modelAndView.addObject("orders", orderDAO.getOrders());
-            modelAndView.addObject("clients", clientDAO.getClients());
-            modelAndView.addObject("products", productDAO.getAllProducts());
+            modelAndView.addObject("orders", orderService.getOrders());
+            modelAndView.addObject("clients", clientService.getClients());
+            modelAndView.addObject("products", productService.getAllProducts());
             return modelAndView;
         }
 
@@ -68,7 +68,7 @@ public class AdminController {
                                      HttpServletRequest request) {
         HttpSession session = request.getSession();
         ModelAndView modelAndView = new ModelAndView();
-        if((username.equals(administratorDAO.getAdminUsername("admin")))&&(password.equals(administratorDAO.getAdminPassword("admin")))) {
+        if((username.equals(administratorService.getAdminUsername("admin")))&&(password.equals(administratorService.getAdminPassword("admin")))) {
             session.setAttribute("status", "admin");
             return new ModelAndView("redirect:/admin/", model);
         } else {
@@ -102,7 +102,7 @@ public class AdminController {
 
         if (checkStatus(session)) {
             modelAndView.setViewName("adminSettings");
-            modelAndView.addObject("users", administratorDAO.getAllUsers());
+            modelAndView.addObject("users", administratorService.getAllUsers());
             return modelAndView;
         }
 
@@ -118,7 +118,7 @@ public class AdminController {
 
         if (checkStatus(session)) {
             modelAndView.setViewName("adminUser");
-            modelAndView.addObject("user", administratorDAO.getAdminById(id));
+            modelAndView.addObject("user", administratorService.getAdminById(id));
             return modelAndView;
         }
 
@@ -134,7 +134,7 @@ public class AdminController {
 
         if (checkStatus(session)) {
             modelAndView.setViewName("adminUserEdit");
-            modelAndView.addObject("user", administratorDAO.getAdminById(id));
+            modelAndView.addObject("user", administratorService.getAdminById(id));
             return modelAndView;
         }
 
@@ -156,7 +156,7 @@ public class AdminController {
         HttpSession session = request.getSession();
 
         if (checkStatus(session)) {
-            administratorDAO.saveAdmin(id, role, password, username, domainName, emailAddress, phoneNumber1, phoneNumber2);
+            administratorService.saveAdmin(id, role, password, username, domainName, emailAddress, phoneNumber1, phoneNumber2);
             return new ModelAndView("redirect:/admin/user/{id}");
         }
 
@@ -177,7 +177,7 @@ public class AdminController {
 
         if (checkStatus(session)) {
             Administrator administrator = new Administrator(role, password, username, domainName, emailAddress, phoneNumber1, phoneNumber2);
-            administratorDAO.saveAdmin(administrator);
+            administratorService.saveAdmin(administrator);
             return new ModelAndView("redirect:/admin/parameter", model);
         }
 
@@ -191,7 +191,7 @@ public class AdminController {
 
         if (checkStatus(session)) {
             modelAndView.setViewName("adminPosts");
-            modelAndView.addObject("posts", postDAO.getAllPosts());
+            modelAndView.addObject("posts", postService.getAllPosts());
             return modelAndView;
         }
 
@@ -206,7 +206,7 @@ public class AdminController {
 
         if (checkStatus(session)) {
             modelAndView.setViewName("adminPosts");
-            modelAndView.addObject("posts", postDAO.getAllPostAsc());
+            modelAndView.addObject("posts", postService.getAllPostAsc());
             return modelAndView;
         }
 
@@ -221,7 +221,7 @@ public class AdminController {
 
         if (checkStatus(session)) {
             modelAndView.setViewName("adminPosts");
-            modelAndView.addObject("posts", postDAO.getAllPostsDesc());
+            modelAndView.addObject("posts", postService.getAllPostsDesc());
             return modelAndView;
         }
 
@@ -236,7 +236,7 @@ public class AdminController {
 
         if (checkStatus(session)) {
             modelAndView.setViewName("adminPosts");
-            modelAndView.addObject("posts", postDAO.getAllPostsNameUp());
+            modelAndView.addObject("posts", postService.getAllPostsNameUp());
             return modelAndView;
         }
 
@@ -251,7 +251,7 @@ public class AdminController {
 
         if (checkStatus(session)) {
             modelAndView.setViewName("adminPosts");
-            modelAndView.addObject("posts", postDAO.getAllPostsNameDown());
+            modelAndView.addObject("posts", postService.getAllPostsNameDown());
             return modelAndView;
         }
 
@@ -267,7 +267,7 @@ public class AdminController {
 
         if (checkStatus(session)) {
             modelAndView.setViewName("adminPost");
-            modelAndView.addObject("post", postDAO.get(id));
+            modelAndView.addObject("post", postService.get(id));
             return modelAndView;
         }
 
@@ -283,7 +283,7 @@ public class AdminController {
 
         if (checkStatus(session)) {
             modelAndView.setViewName("adminPostEdit");
-            modelAndView.addObject("post", postDAO.get(id));
+            modelAndView.addObject("post", postService.get(id));
             return  modelAndView;
         }
 
@@ -307,7 +307,7 @@ public class AdminController {
         HttpSession session = request.getSession();
 
         if (checkStatus(session)) {
-            postDAO.save(id, title, imagePath, shortDescription,
+            postService.save(id, title, imagePath, shortDescription,
                     new SimpleDateFormat("dd.MM.yyyy").parse(dateOfPublication),
                     buttonText, content, metaDescription, metaKeyWords, metaTitle);
             return new ModelAndView("redirect:/admin/post/{id}", model);
@@ -323,7 +323,7 @@ public class AdminController {
         HttpSession session = request.getSession();
 
         if (checkStatus(session)) {
-            postDAO.remove(id);
+            postService.remove(id);
             return new ModelAndView("redirect:/admin/post", model);
         }
 
@@ -348,7 +348,7 @@ public class AdminController {
             Post infoToAdd = new Post(title, imagePath, shortDescription,
                     new SimpleDateFormat("dd.MM.yyyy").parse(dateOfPublication),
                     buttonText, content, metaDescription, metaKeyWords, metaTitle);
-            postDAO.save(infoToAdd);
+            postService.save(infoToAdd);
             return new ModelAndView("redirect:/admin/post", model);
         }
 
@@ -363,8 +363,8 @@ public class AdminController {
 
         if (checkStatus(session)) {
             modelAndView.setViewName("adminProductEdit");
-            modelAndView.addObject("product", productDAO.getProductById(id));
-            modelAndView.addObject("categories", categoryDAO.getAllCategories());
+            modelAndView.addObject("product", productService.getProductById(id));
+            modelAndView.addObject("categories", categoryService.getAllCategories());
             return modelAndView;
         }
 
@@ -397,8 +397,8 @@ public class AdminController {
         HttpSession session = request.getSession();
 
         if (checkStatus(session)) {
-            Category category = categoryDAO.getCategoryById(productCategory);
-            productDAO.saveProduct(id, name, price, currency, category, amount, inStock, description, shortDesc, metaDescription, metaKeyWords, metaTitle,
+            Category category = categoryService.getCategoryById(productCategory);
+            productService.saveProduct(id, name, price, currency, category, amount, inStock, description, shortDesc, metaDescription, metaKeyWords, metaTitle,
                     image1, image2, image3, image4, "yes".equals(isNew), discount, brand );
             return new ModelAndView("redirect:/admin/catalog", model);
         }
@@ -414,7 +414,7 @@ public class AdminController {
 
         if (checkStatus(session)) {
             modelAndView.setViewName("adminProduct");
-            modelAndView.addObject("product", productDAO.getProductById(id));
+            modelAndView.addObject("product", productService.getProductById(id));
             return modelAndView;
         }
 
@@ -429,7 +429,7 @@ public class AdminController {
 
         if (checkStatus(session)) {
             modelAndView.setViewName("adminProducts");
-            modelAndView.addObject("products", productDAO.getAllProducts());
+            modelAndView.addObject("products", productService.getAllProducts());
             return modelAndView;
         }
 
@@ -444,7 +444,7 @@ public class AdminController {
         HttpSession session = request.getSession();
 
         if (checkStatus(session)) {
-            productDAO.remove(id);
+            productService.remove(id);
             return new ModelAndView("redirect:/admin/catalog", model);
         }
 
@@ -461,7 +461,7 @@ public class AdminController {
 
         if (checkStatus(session)) {
             modelAndView.setViewName("adminCatalog");
-            modelAndView.addObject("categories", categoryDAO.getAllCategories());
+            modelAndView.addObject("categories", categoryService.getAllCategories());
             return modelAndView;
         }
         modelAndView.setViewName("adminLogin");
@@ -476,8 +476,8 @@ public class AdminController {
 
         if (checkStatus(session)) {
             modelAndView.setViewName("adminCategory");
-            modelAndView.addObject("category", categoryDAO.getCategoryByName(name));
-            modelAndView.addObject("products", productDAO.getProductsByCategory(name));
+            modelAndView.addObject("category", categoryService.getCategoryByName(name));
+            modelAndView.addObject("products", productService.getProductsByCategory(name));
             return modelAndView;
         }
 
@@ -493,7 +493,7 @@ public class AdminController {
 
         if (checkStatus(session)) {
             modelAndView.setViewName("adminCategoryEdit");
-            modelAndView.addObject("category", categoryDAO.getCategoryByName(name));
+            modelAndView.addObject("category", categoryService.getCategoryByName(name));
             return modelAndView;
         }
 
@@ -514,7 +514,7 @@ public class AdminController {
         HttpSession session = request.getSession();
 
         if (checkStatus(session)) {
-            categoryDAO.saveCategory(id, name, info, metaDescription, metaKeyWords, metaTitle);
+            categoryService.saveCategory(id, name, info, metaDescription, metaKeyWords, metaTitle);
             return new ModelAndView("redirect:/admin/catalog", model);
         }
 
@@ -528,8 +528,8 @@ public class AdminController {
         HttpSession session = request.getSession();
 
         if (checkStatus(session)) {
-            productDAO.removeFromCategory(id);
-            categoryDAO.remove(id);
+            productService.removeFromCategory(id);
+            categoryService.remove(id);
             return new ModelAndView("redirect:/admin/catalog", model);
         }
 
@@ -560,10 +560,10 @@ public class AdminController {
         HttpSession session = request.getSession();
 
         if (checkStatus(session)) {
-            Category category = categoryDAO.getCategoryById(id);
+            Category category = categoryService.getCategoryById(id);
             Product product = new Product(name, price, currency, category, amount, inStock, description,  shortDesc, metaDescription, metaKeyWords, metaTitle,
                      image1, image2, image3, image4, "yes".equals(isNew), discount, brand);
-            productDAO.saveProduct(product);
+            productService.saveProduct(product);
            return new ModelAndView("redirect:/admin/catalog", model);
 
         }
@@ -583,7 +583,7 @@ public class AdminController {
 
         if (checkStatus(session)) {
             Category category = new Category(name, info, metaDescription, metaKeyWords, metaTitle);
-            categoryDAO.saveCategory(category);
+            categoryService.saveCategory(category);
             return new ModelAndView("redirect:/admin/catalog", model);
         }
 
@@ -609,7 +609,7 @@ public class AdminController {
             List<ProductInCart> productInCarts = new ArrayList<>();
 
             for (String s : productsId) {
-                Product product = productDAO.getProductById(Integer.valueOf(s));
+                Product product = productService.getProductById(Integer.valueOf(s));
                 ProductInCart productInCart = new ProductInCart(product, product.getProductCategory().getName(),
                         product.getImage1(), product.getName(), product.getPrice(), currency, quantity);
                 productInCarts.add(productInCart);
@@ -627,13 +627,13 @@ public class AdminController {
             order.setDelivery(delivery);
             order.setComments(comments);
             order.setTotalAmount(amount);
-            order.setClient(clientDAO.getClient(client));
+            order.setClient(clientService.getClient(client));
 
             for (ProductInCart productInCart : productInCarts) {
                 productInCart.setOrder(order);
             }
-            orderDAO.saveOrder(order);
-            productInCartDAO.saveProductInCart(productInCarts);
+            orderService.saveOrder(order);
+            productInCartService.saveProductInCart(productInCarts);
             return new ModelAndView("redirect:/admin/", model);
         }
 
@@ -647,10 +647,10 @@ public class AdminController {
         ModelAndView modelAndView = new ModelAndView();
 
         if (checkStatus(session)) {
-            Order order = orderDAO.getOrder(id);
+            Order order = orderService.getOrder(id);
             modelAndView.addObject("order", order);
-            modelAndView.addObject("products", productDAO.getAllProducts());
-            session.setAttribute("productList", productInCartDAO.getProductsInCart(id));
+            modelAndView.addObject("products", productService.getAllProducts());
+            session.setAttribute("productList", productInCartService.getProductsInCart(id));
             modelAndView.setViewName("adminOrderEdit");
         } else {
             modelAndView.setViewName("adminLogin");
@@ -664,8 +664,8 @@ public class AdminController {
         HttpSession session = request.getSession();
         ModelAndView modelAndView = new ModelAndView();
         if (checkStatus(session)) {
-            modelAndView.addObject("order", orderDAO.getOrder(id));
-            modelAndView.addObject("products", productInCartDAO.getProductsInCart(id));
+            modelAndView.addObject("order", orderService.getOrder(id));
+            modelAndView.addObject("products", productInCartService.getProductsInCart(id));
             modelAndView.setViewName("adminOrder");
             return modelAndView;
         }
@@ -681,7 +681,7 @@ public class AdminController {
         HttpSession session = request.getSession();
 
         if (checkStatus(session)) {
-            orderDAO.deleteOrder(id);
+            orderService.deleteOrder(id);
             return new ModelAndView("redirect:/admin/", model);
         }
 
@@ -696,9 +696,9 @@ public class AdminController {
         HttpSession session = request.getSession();
 
         if (checkStatus(session)) {
-            ProductInCart product = productInCartDAO.getById(delete);
-            orderDAO.updateOrderAmount(id, product, false);
-            productInCartDAO.delete(product);
+            ProductInCart product = productInCartService.getById(delete);
+            orderService.updateOrderAmount(id, product, false);
+            productInCartService.delete(product);
             return new ModelAndView("redirect:/admin/", model);
         }
 
@@ -714,7 +714,7 @@ public class AdminController {
 
         if (checkStatus(session)) {
 
-            Product productById = productDAO.getProductById(product);
+            Product productById = productService.getProductById(product);
             List<String> quantities = Arrays.asList(request.getParameterValues("quantity"));
             int quantity = 1;
 
@@ -729,9 +729,9 @@ public class AdminController {
                                     productById.getImage1(), productById.getName(), productById.getPrice(),
                                     productById.getCurrency(), quantity);
 
-            productInCart.setOrder(orderDAO.getOrder(id));
-            productInCartDAO.saveProductInCart(productInCart);
-            orderDAO.updateOrderAmount(id, productInCart, true);
+            productInCart.setOrder(orderService.getOrder(id));
+            productInCartService.saveProductInCart(productInCart);
+            orderService.updateOrderAmount(id, productInCart, true);
             return new ModelAndView("redirect:/admin/", model);
         }
 
@@ -751,7 +751,7 @@ public class AdminController {
 
         if (checkStatus(session)) {
             Date orderDate = new SimpleDateFormat("dd.MM.yyyy hh:mm").parse(date);
-            orderDAO.saveOrder(id, orderDate, totalAmount, delivery, comments);
+            orderService.saveOrder(id, orderDate, totalAmount, delivery, comments);
             return new ModelAndView("redirect:/admin/", model);
         }
 
@@ -769,9 +769,9 @@ public class AdminController {
         if (checkStatus(session)) {
             List<Order> orderList;
             if ("dateUp".equals(dateUp)) {
-                orderList =  orderDAO.getSortedByDateUp();
+                orderList =  orderService.getSortedByDateUp();
             } else {
-                orderList = orderDAO.getSortedByDateDown();
+                orderList = orderService.getSortedByDateDown();
             }
             modelAndView.addObject("orders", orderList);
             modelAndView.setViewName("adminIndex");
@@ -787,7 +787,7 @@ public class AdminController {
         HttpSession session = request.getSession();
         ModelAndView modelAndView = new ModelAndView();
         if (checkStatus(session)) {
-            modelAndView.addObject("orders", orderDAO.getSortedByAmountDown());
+            modelAndView.addObject("orders", orderService.getSortedByAmountDown());
             modelAndView.setViewName("adminIndex");
             return modelAndView;
         }
@@ -803,7 +803,7 @@ public class AdminController {
 
         if (checkStatus(session)) {
             modelAndView.setViewName("adminClients");
-            modelAndView.addObject("clients", clientDAO.getClients());
+            modelAndView.addObject("clients", clientService.getClients());
             return modelAndView;
         }
 
@@ -818,7 +818,7 @@ public class AdminController {
 
         if (checkStatus(session)) {
             modelAndView.setViewName("adminClients");
-            modelAndView.addObject("clients", clientDAO.getSortedByName());
+            modelAndView.addObject("clients", clientService.getSortedByName());
             return modelAndView;
         }
 
@@ -832,7 +832,7 @@ public class AdminController {
         ModelAndView modelAndView = new ModelAndView();
         if (checkStatus(session)) {
             modelAndView.setViewName("adminClients");
-            modelAndView.addObject("clients", clientDAO.getSortedByEmail());
+            modelAndView.addObject("clients", clientService.getSortedByEmail());
             return modelAndView;
         }
 
@@ -847,10 +847,10 @@ public class AdminController {
         ModelAndView modelAndView = new ModelAndView();
         if (checkStatus(session)) {
             modelAndView.setViewName("adminClient");
-            modelAndView.addObject("client", clientDAO.getClient(id));
-            modelAndView.addObject("feedBacks", feedBackDAO.getFeedBacksByClientId(id));
-            modelAndView.addObject("products", productDAO.getAllProducts());
-            modelAndView.addObject("orders", orderDAO.getAllOrdersByClient(id));
+            modelAndView.addObject("client", clientService.getClient(id));
+            modelAndView.addObject("feedBacks", feedBackService.getFeedBacksByClientId(id));
+            modelAndView.addObject("products", productService.getAllProducts());
+            modelAndView.addObject("orders", orderService.getAllOrdersByClient(id));
             return modelAndView;
         }
 
@@ -865,8 +865,8 @@ public class AdminController {
         HttpSession session = request.getSession();
 
         if (checkStatus(session)) {
-            Client client = clientDAO.getClient(id);
-            clientDAO.remove(client);
+            Client client = clientService.getClient(id);
+            clientService.remove(client);
             return new ModelAndView("redirect:/admin/client", model);
         }
 
@@ -881,10 +881,10 @@ public class AdminController {
 
         if (checkStatus(session)) {
             String feedBackId = request.getParameter("delete");
-            FeedBack feedBack = feedBackDAO.getFeedBackById(Integer.valueOf(feedBackId));
+            FeedBack feedBack = feedBackService.getFeedBackById(Integer.valueOf(feedBackId));
             System.out.println(feedBack.getId() + "id of feedback");
-            productDAO.removeFeedBack(feedBack);
-            feedBackDAO.delete(feedBack);
+            productService.removeFeedBack(feedBack);
+            feedBackService.delete(feedBack);
             return new ModelAndView("redirect:/admin/client/{id}", model);
         }
 
@@ -899,8 +899,8 @@ public class AdminController {
 
         if (checkStatus(session)) {
             modelAndView.setViewName("adminClientEdit");
-            Client client = clientDAO.getClient(id);
-            modelAndView.addObject("feedBacks", feedBackDAO.getFeedBacksByClientId(id));
+            Client client = clientService.getClient(id);
+            modelAndView.addObject("feedBacks", feedBackService.getFeedBacksByClientId(id));
             modelAndView.addObject("client", client);
             return modelAndView;
         }
@@ -919,7 +919,7 @@ public class AdminController {
         HttpSession session = request.getSession();
 
         if (checkStatus(session)) {
-            clientDAO.saveClient(id, firstName, phoneNumber, email);
+            clientService.saveClient(id, firstName, phoneNumber, email);
             return new ModelAndView("redirect:/admin/client", model);
         }
 
@@ -936,7 +936,7 @@ public class AdminController {
 
         if (checkStatus(session)) {
             Client client = new Client (firstName, phoneNumber, email);
-            clientDAO.addClient(client);
+            clientService.addClient(client);
             return new ModelAndView("redirect:/admin/client", model);
         }
 
@@ -950,7 +950,7 @@ public class AdminController {
 
         if (checkStatus(session)) {
             modelAndView.setViewName("adminFeedbacks");
-            modelAndView.addObject("feedbacks", feedBackDAO.getAllFeedBacks());
+            modelAndView.addObject("feedbacks", feedBackService.getAllFeedBacks());
             return modelAndView;
         }
 
@@ -965,7 +965,7 @@ public class AdminController {
 
         if (checkStatus(session)) {
             modelAndView.setViewName("adminFeedbacks");
-            modelAndView.addObject("feedbacks", feedBackDAO.getAllFeedBacksDateUp());
+            modelAndView.addObject("feedbacks", feedBackService.getAllFeedBacksDateUp());
             return modelAndView;
         }
 
@@ -980,7 +980,7 @@ public class AdminController {
 
         if (checkStatus(session)) {
             modelAndView.setViewName("adminFeedbacks");
-            modelAndView.addObject("feedbacks", feedBackDAO.getAllFeedBacksDateDown());
+            modelAndView.addObject("feedbacks", feedBackService.getAllFeedBacksDateDown());
             return modelAndView;
         }
 
@@ -995,7 +995,7 @@ public class AdminController {
 
         if (checkStatus(session)) {
             modelAndView.setViewName("adminFeedbacks");
-            modelAndView.addObject("feedbacks", feedBackDAO.getAllFeedBacksRateDown());
+            modelAndView.addObject("feedbacks", feedBackService.getAllFeedBacksRateDown());
             return modelAndView;
         }
 
@@ -1010,7 +1010,7 @@ public class AdminController {
 
         if (checkStatus(session)) {
             modelAndView.setViewName("adminFeedbacks");
-            modelAndView.addObject("feedbacks", feedBackDAO.getAllFeedBacksRateUp());
+            modelAndView.addObject("feedbacks", feedBackService.getAllFeedBacksRateUp());
             return modelAndView;
         }
 
@@ -1028,7 +1028,7 @@ public class AdminController {
 
         if (checkStatus(session)) {
             modelAndView.setViewName("adminFeedbackEdit");
-            modelAndView.addObject("feedback", feedBackDAO.getFeedBackById(id));
+            modelAndView.addObject("feedback", feedBackService.getFeedBackById(id));
             return modelAndView;
         }
 
@@ -1047,7 +1047,7 @@ public class AdminController {
 
         if (checkStatus(session)) {
 
-            feedBackDAO.saveFeedBack(id, new SimpleDateFormat("dd.MM.yyyy HH:mm").parse(date), evaluation, feedback);
+            feedBackService.saveFeedBack(id, new SimpleDateFormat("dd.MM.yyyy HH:mm").parse(date), evaluation, feedback);
             return new ModelAndView("redirect:/admin/feedback", model);
         }
 
@@ -1065,13 +1065,13 @@ public class AdminController {
         HttpSession session = request.getSession();
 
         if (checkStatus(session)) {
-            Product productById = productDAO.getProductById(product);
-            Client client = clientDAO.getClient(id);
+            Product productById = productService.getProductById(product);
+            Client client = clientService.getClient(id);
             Date dateOfFeedBack = new SimpleDateFormat("dd.MM.yyyy HH:mm").parse(date);
             FeedBack feedBack = new FeedBack(productById, dateOfFeedBack, client, evaluation, feedback);
             productById.addFeedBack(feedBack);
-            feedBackDAO.saveFeedBack(feedBack);
-            productDAO.updateProduct(productById);
+            feedBackService.saveFeedBack(feedBack);
+            productService.updateProduct(productById);
             return new ModelAndView("redirect:/admin/client/{id}", model);
         }
 
@@ -1085,7 +1085,7 @@ public class AdminController {
         HttpSession session = request.getSession();
 
         if (checkStatus(session)) {
-            feedBackDAO.remove(feedBackDAO.getFeedBackById(id));
+            feedBackService.remove(feedBackService.getFeedBackById(id));
             return new ModelAndView("redirect:/admin/feedback", model);
         }
 

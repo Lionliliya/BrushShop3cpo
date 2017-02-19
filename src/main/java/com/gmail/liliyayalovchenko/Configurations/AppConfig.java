@@ -2,6 +2,7 @@ package com.gmail.liliyayalovchenko.Configurations;
 
 import com.gmail.liliyayalovchenko.DAO.*;
 import com.gmail.liliyayalovchenko.DAOImplementation.*;
+import com.gmail.liliyayalovchenko.Services.*;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import org.springframework.context.annotation.*;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
@@ -16,9 +17,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import java.beans.PropertyVetoException;
 import java.util.Properties;
 
@@ -35,12 +33,6 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 
         public AppConfig(Environment environment) {
             this.environment = environment;
-    }
-
-    @Bean
-    public EntityManager entityManager() {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("BeautyJPA");
-        return emf.createEntityManager();
     }
 
     @Bean
@@ -83,6 +75,46 @@ public class AppConfig extends WebMvcConfigurerAdapter {
         return new ProductInCartDAOImpl();
     }
 
+    @Bean
+    public AdministratorService administratorService() {
+        return new AdministratorService();
+    }
+
+    @Bean
+    public CategoryService categoryService() {
+        return new CategoryService();
+    }
+
+    @Bean
+    public ClientService clientService() {
+        return new ClientService();
+    }
+
+    @Bean
+    public FeedBackService feedBackService() {
+        return new FeedBackService();
+    }
+
+    @Bean
+    public OrderService orderService() {
+        return new OrderService();
+    }
+
+    @Bean
+    public PostService postService() {
+        return new PostService();
+    }
+
+    @Bean
+    public ProductInCartService productInCartService() {
+        return new ProductInCartService();
+    }
+
+    @Bean
+    public ProductService productService() {
+        return new ProductService();
+    }
+    
     @Bean
     public UrlBasedViewResolver setupViewResolver() {
         UrlBasedViewResolver resolver = new UrlBasedViewResolver();

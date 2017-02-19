@@ -1,9 +1,9 @@
 package com.gmail.liliyayalovchenko.Controllers;
 
-import com.gmail.liliyayalovchenko.DAO.CategoryDAO;
-import com.gmail.liliyayalovchenko.DAO.PostDAO;
-import com.gmail.liliyayalovchenko.DAO.ProductDAO;
 import com.gmail.liliyayalovchenko.Domains.ProductInCart;
+import com.gmail.liliyayalovchenko.Services.CategoryService;
+import com.gmail.liliyayalovchenko.Services.PostService;
+import com.gmail.liliyayalovchenko.Services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,13 +20,13 @@ import java.util.ArrayList;
 public class InformationController {
 
     @Autowired
-    private PostDAO postDAO;
+    private PostService postService;
 
     @Autowired
-    private CategoryDAO categoryDAO;
+    private CategoryService categoryService;
 
     @Autowired
-    private ProductDAO productDAO;
+    private ProductService productService;
 
     @RequestMapping("/news")
     public ModelAndView news(HttpServletRequest request) {
@@ -34,10 +34,10 @@ public class InformationController {
         checkSession(session);
         ModelAndView modelAndView = new ModelAndView();
         session.setAttribute("startRow", 1);
-        modelAndView.addObject("categories", categoryDAO.getAllCategories());
-        modelAndView.addObject("articles", postDAO.getNextPosts(1));
+        modelAndView.addObject("categories",categoryService.getAllCategories());
+        modelAndView.addObject("articles", postService.getNextPosts(1));
 //        modelAndView.addObject("articles", postDAO.getAllPostAsc());
-        modelAndView.addObject("brands", productDAO.getAllBrands());
+        modelAndView.addObject("brands", productService.getAllBrands());
         modelAndView.addObject("cartSize", session.getAttribute("cartSize"));
         modelAndView.setViewName("news");
         return modelAndView;
@@ -50,9 +50,9 @@ public class InformationController {
         ModelAndView modelAndView = new ModelAndView();
         Integer startRow = (Integer) session.getAttribute("startRow");
         session.setAttribute("startRow", startRow + 3);
-        modelAndView.addObject("categories", categoryDAO.getAllCategories());
-        modelAndView.addObject("articles", postDAO.getNextPosts(startRow + 3));
-        modelAndView.addObject("brands", productDAO.getAllBrands());
+        modelAndView.addObject("categories", categoryService.getAllCategories());
+        modelAndView.addObject("articles", postService.getNextPosts(startRow + 3));
+        modelAndView.addObject("brands", productService.getAllBrands());
         modelAndView.addObject("cartSize", session.getAttribute("cartSize"));
         modelAndView.setViewName("news");
         return modelAndView;
@@ -66,9 +66,9 @@ public class InformationController {
         Integer startRow = (Integer) session.getAttribute("startRow");
         startRow -= 3;
         session.setAttribute("startRow",startRow);
-        modelAndView.addObject("categories", categoryDAO.getAllCategories());
-        modelAndView.addObject("articles", postDAO.getNextPosts(startRow));
-        modelAndView.addObject("brands", productDAO.getAllBrands());
+        modelAndView.addObject("categories", categoryService.getAllCategories());
+        modelAndView.addObject("articles", postService.getNextPosts(startRow));
+        modelAndView.addObject("brands", productService.getAllBrands());
         modelAndView.addObject("cartSize", session.getAttribute("cartSize"));
         modelAndView.setViewName("news");
         return modelAndView;
@@ -79,9 +79,9 @@ public class InformationController {
         HttpSession session = request.getSession();
         checkSession(session);
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("categories", categoryDAO.getAllCategories());
-        modelAndView.addObject("articles", postDAO.getAllPostsDesc());
-        modelAndView.addObject("brands", productDAO.getAllBrands());
+        modelAndView.addObject("categories", categoryService.getAllCategories());
+        modelAndView.addObject("articles", postService.getAllPostsDesc());
+        modelAndView.addObject("brands", productService.getAllBrands());
         modelAndView.addObject("cartSize", session.getAttribute("cartSize"));
         modelAndView.setViewName("news");
         return modelAndView;
@@ -93,12 +93,12 @@ public class InformationController {
         HttpSession session = request.getSession();
         checkSession(session);
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("categories", categoryDAO.getAllCategories());
-        modelAndView.addObject("article", postDAO.get(id));
+        modelAndView.addObject("categories", categoryService.getAllCategories());
+        modelAndView.addObject("article", postService.get(id));
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        String date = sdf.format(postDAO.get(id).getDateOfPublication());
+        String date = sdf.format(postService.get(id).getDateOfPublication());
         modelAndView.addObject("date", date);
-        modelAndView.addObject("brands", productDAO.getAllBrands());
+        modelAndView.addObject("brands", productService.getAllBrands());
         modelAndView.addObject("cartSize", session.getAttribute("cartSize"));
         modelAndView.setViewName("article");
         return modelAndView;

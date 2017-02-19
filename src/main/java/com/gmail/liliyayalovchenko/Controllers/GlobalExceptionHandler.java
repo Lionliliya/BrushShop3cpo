@@ -1,9 +1,9 @@
 package com.gmail.liliyayalovchenko.Controllers;
 
 
-import com.gmail.liliyayalovchenko.DAO.CategoryDAO;
-import com.gmail.liliyayalovchenko.DAO.ProductDAO;
 import com.gmail.liliyayalovchenko.Domains.ProductInCart;
+import com.gmail.liliyayalovchenko.Services.CategoryService;
+import com.gmail.liliyayalovchenko.Services.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,10 +28,10 @@ public class GlobalExceptionHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
     @Autowired
-    private ProductDAO productDAO;
+    private ProductService productService;
 
     @Autowired
-    private CategoryDAO categoryDAO;
+    private CategoryService categoryService;
 
     @ExceptionHandler(SQLException.class)
     public ModelAndView handleSQLException(HttpServletRequest request, Exception ex) {
@@ -65,8 +65,8 @@ public class GlobalExceptionHandler {
         modelAndView.addObject("exception", ex);
         modelAndView.addObject("url", request.getRequestURL());
         modelAndView.addObject("cartSize", session.getAttribute("cartSize"));
-        modelAndView.addObject("categories", categoryDAO.getAllCategories());
-        modelAndView.addObject("brands", productDAO.getAllBrands());
+        modelAndView.addObject("categories", categoryService.getAllCategories());
+        modelAndView.addObject("brands", productService.getAllBrands());
         modelAndView.setViewName("404");
         return modelAndView;
     }
