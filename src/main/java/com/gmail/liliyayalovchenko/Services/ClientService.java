@@ -43,6 +43,11 @@ public class ClientService {
     }
 
     @Transactional
+    public Client findClientByPhone(String phone) {
+        return clientDAO.findClientByPhone(phone);
+    }
+
+    @Transactional
     public void saveClient(int id, String name, String phone, String email) {
         clientDAO.saveClient(id, name, phone, email);
     }

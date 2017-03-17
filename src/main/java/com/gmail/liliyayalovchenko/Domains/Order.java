@@ -1,5 +1,9 @@
 package com.gmail.liliyayalovchenko.Domains;
 
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -10,14 +14,18 @@ import java.util.List;
 public class Order implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name = "increment", strategy = "increment")
+    @Column
     private int id;
     @Column(nullable = false)
     private Date date;
     @Column(nullable = false)
     private String delivery;
     private String comments;
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH}, fetch = FetchType.LAZY)
+
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH})
     @JoinColumn(name = "client_id")
     private Client client;
     private int totalAmount;

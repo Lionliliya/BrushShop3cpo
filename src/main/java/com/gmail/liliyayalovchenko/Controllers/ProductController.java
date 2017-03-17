@@ -1,9 +1,6 @@
 package com.gmail.liliyayalovchenko.Controllers;
 
-import com.gmail.liliyayalovchenko.Domains.Client;
-import com.gmail.liliyayalovchenko.Domains.FeedBack;
-import com.gmail.liliyayalovchenko.Domains.Product;
-import com.gmail.liliyayalovchenko.Domains.ProductInCart;
+import com.gmail.liliyayalovchenko.Domains.*;
 import com.gmail.liliyayalovchenko.Services.CategoryService;
 import com.gmail.liliyayalovchenko.Services.ClientService;
 import com.gmail.liliyayalovchenko.Services.FeedBackService;
@@ -46,7 +43,15 @@ public class ProductController {
         checkSession(session);
 
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("categories", categoryService.getAllCategories());
+        List<Category> allCategories = categoryService.getAllCategories();
+
+        System.out.println("All categories---------------------------------------------");
+        for (Category allCategory : allCategories) {
+            System.out.println(allCategory.getId());
+        }
+        System.out.println("All categories---------------------------------------------");
+
+        modelAndView.addObject("categories", allCategories);
         modelAndView.addObject("products", productService.getAllProducts());
         modelAndView.addObject("cartSize", session.getAttribute("cartSize"));
         modelAndView.addObject("brands", productService.getAllBrands());
@@ -178,7 +183,7 @@ public class ProductController {
     @RequestMapping(value = "/product/{id}", method = RequestMethod.POST)
     public ModelAndView product(@RequestParam(value = "firstName") String firstName,
                                 @PathVariable("id") int id,
-                                @RequestParam(value = "email") String email,
+                                @RequestParam(value = "phone") String phone,
                                 @RequestParam(value = "evaluation") int evaluation,
                                 @RequestParam(value = "feedback") String feedback,
                                 HttpServletRequest request) {
@@ -189,7 +194,7 @@ public class ProductController {
         Product product = productService.getProductById(id);
         Client client;
         try {
-            client = clientService.findClientByEmail(email);
+            client = clientService.findClientByPhone(phone);
             FeedBack feedBack = new FeedBack(product, new Date(), client, evaluation, feedback);
             product.addFeedBack(feedBack);
             feedBackService.saveFeedBack(feedBack);

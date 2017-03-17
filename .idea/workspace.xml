@@ -2,18 +2,344 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="210644af-f650-4d3c-95df-f9bd2d957a64" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Services/PostService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Services/ProductInCartService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Services/ProductService.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/Notification.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/AdminController.java" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/AdminController.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/BrushShop_war.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/BrushShop_war_exploded.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_3_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BrushShop3cpo.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Domains/Mail.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/META-INF/logback.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/Controllers/Notification.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/Domains/Mail.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex.war" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/META-INF/logback.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/META-INF/persistence.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/Configurations/AppConfig.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/Configurations/AppLogging.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/Configurations/WebInitializer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/Controllers/AdminController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/Controllers/CategoryController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/Controllers/GlobalExceptionHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/Controllers/InformationController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/Controllers/Notification.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/Controllers/OrderController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/Controllers/ProductController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/DAO/AdministratorDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/DAO/CategoryDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/DAO/ClientDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/DAO/FeedBackDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/DAO/OrderDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/DAO/PostDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/DAO/ProductDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/DAO/ProductInCartDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/DAOImplementation/AdministratorDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/DAOImplementation/CategoryDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/DAOImplementation/ClientDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/DAOImplementation/FeedBackDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/DAOImplementation/OrderDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/DAOImplementation/PostDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/DAOImplementation/ProductDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/DAOImplementation/ProductInCartDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/Domains/Administrator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/Domains/Category.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/Domains/Client.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/Domains/FeedBack.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/Domains/Mail.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/Domains/Order.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/Domains/Post.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/Domains/Product.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/classes/com/gmail/liliyayalovchenko/Domains/ProductInCart.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/activation-1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/antlr-2.7.7.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/aspectjrt-1.8.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/aspectjtools-1.8.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/aspectjweaver-1.8.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/cdi-api-1.1-PFD.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/classmate-1.3.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/commons-fileupload-1.3.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/commons-io-2.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/commons-logging-1.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/dom4j-1.6.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/el-api-2.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/geronimo-jta_1.1_spec-1.1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/hibernate-commons-annotations-5.0.1.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/hibernate-core-5.2.1.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/hibernate-entitymanager-5.2.1.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/hibernate-jpa-2.0-api-1.0.1.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/hibernate-validator-5.2.1.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/jandex-2.0.0.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/javassist-3.20.0-GA.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/javax.inject-1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/javax.mail-api-1.5.5.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/javax.servlet-api-3.1.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/jboss-interceptors-api_1.1_spec-1.0.0.Beta1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/jboss-logging-3.3.0.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/jsr250-api-1.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/jstl-1.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/logback-classic-1.1.7.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/logback-core-1.1.7.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/mail-1.4.7.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/mysql-connector-java-5.1.34.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/slf4j-api-1.7.21.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/spring-aop-4.3.2.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/spring-beans-4.3.2.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/spring-context-4.3.2.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/spring-core-4.3.2.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/spring-expression-4.3.2.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/spring-web-4.3.2.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/spring-webmvc-4.3.2.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/lib/validation-api-1.1.0.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/404.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/about.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/adminCatalog.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/adminCategory.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/adminCategoryEdit.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/adminClient.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/adminClientEdit.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/adminClients.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/adminFeedbackEdit.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/adminFeedbacks.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/adminIndex.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/adminLogin.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/adminOrder.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/adminOrderEdit.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/adminPost.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/adminPostEdit.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/adminPosts.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/adminProduct.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/adminProductEdit.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/adminProducts.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/adminSettings.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/adminUser.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/adminUserEdit.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/article.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/brand.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/cart.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/catalog.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/category.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/contact.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/error.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/home.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/maintance.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/news.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/ordering.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/product.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/sale.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/pages/search.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/WEB-INF/web.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/css/animate.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/css/bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/css/bootstrap.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/css/custom.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/css/font-awesome.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/css/fonts/FontAwesome.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/css/fonts/flexslider-icon.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/css/fonts/flexslider-icon.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/css/fonts/flexslider-icon.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/css/fonts/flexslider-icon.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/css/fonts/fontawesome-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/css/fonts/fontawesome-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/css/fonts/fontawesome-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/css/fonts/fontawesome-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/css/owl.carousel.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/css/owl.theme.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/css/owl.transitions.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/css/style.violet.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/favicon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/AjaxLoader.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/banner-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/banner-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/banner.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/banner2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/basketsquare.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/blog-avatar.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/blog-avatar2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/blog.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/blog2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/detailbig1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/detailbig2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/detailbig3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/detailsquare.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/detailsquare2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/detailsquare3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/eyelining-set/all-ness.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/eyelining-set/background-eye.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/eyelining-set/comfort.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/eyelining-set/design.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/eyelining-set/dotts.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/eyelining-set/eyelining-set-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/eyelining-set/eyelining-set-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/eyelining-set/eyelining-set-3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/getinspired1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/getinspired2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/getinspired3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/grabbing.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/RT_Social_Blog_HolidaySets_BM.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/blush-small.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/blush-small1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/blush1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/blush2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/blush3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/blush4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/brshclnsgel1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/brshclnsgel2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/brshclnsgel3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/brshclnsgel4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/delux-clutch-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/deluxe-clutch-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/deluxe-clutch-3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/deluxe-clutch-4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/deluxe-gift-set-clutch-small.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/deluxe-gift-set-clutch_4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/eco-tools-gift-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/eco-tools-gift-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/eco-tools-gift-3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/eco-tools-gift-4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/fiolet-sintetic-small.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/fiolet-sintetic-small2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/fiolet-sintetic1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/fiolet-sintetic2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/fiolet-sintetic3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/fiolet-sintetic4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/fiolet-sintetic5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/fiolet-sintetic6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/lether-light-broun-small.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/lether-light-broun.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/lether-light-broun1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/lether-light-broun2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/lether-light-broun3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/pink-perple1-small.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/purple1-55.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/purple1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/purple2-55.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/purple2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/purple3-55.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/purple3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/sponge-orange-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/sponge-orange2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/sponge-orange3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/sponge-orange4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/steel-coll-small.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/steel-coll.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/steel-coll1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/steel-coll3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/steel-coll4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/style-perple-small.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/style-perple1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/style-perple1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/style-perple2-small-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/style-perple2-small.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/style-perple2-small.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/style-perple2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/style-perple2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/style-perple3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/style-perple3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/style-perple4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/large/style-perple4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/line1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/line2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/line3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/line4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/logo-small.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/main-slider1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/main-slider2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/main-slider3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/main-slider4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/posts/aqua-splash1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/posts/aqua-splash2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/posts/aqua-splash3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/posts/aqua-splash4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/posts/brows.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/posts/counceler.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/posts/make_up_rules.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/posts/pencil_eye.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/posts/pobling1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/posts/pobling2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/posts/pobling3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/posts/pobling4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/product1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/product1_2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/product2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/product2_2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/product3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/product3_2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/slider/fur.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/slider/real-gift.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/slider/real-gift2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/slider/real.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/slider1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/slider2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/slider3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/img/slider4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/js/bootstrap-hover-dropdown.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/js/front.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/js/jquery-1.11.0.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/js/jquery.cookie.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/js/jquery.flexslider.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/js/jquery.flexslider.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/js/main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/js/modernizr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/js/owl.carousel.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/js/respond.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/e-shop-4.1-runtime-ex/resources/js/waypoints.min.js" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/jdbc.properties" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/logback.xml" afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/Controllers/AdminController.class" afterPath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/Controllers/AdminController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/DAOImplementation/AdministratorDAOImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/DAOImplementation/AdministratorDAOImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/Configurations/AppConfig.class" afterPath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/Configurations/AppConfig.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/Domains/Category.class" afterPath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/Domains/Category.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/Controllers/CategoryController.class" afterPath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/Controllers/CategoryController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/DAOImplementation/CategoryDAOImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/DAOImplementation/CategoryDAOImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/Domains/Client.class" afterPath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/Domains/Client.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/DAO/ClientDAO.class" afterPath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/DAO/ClientDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/DAOImplementation/ClientDAOImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/DAOImplementation/ClientDAOImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/Domains/FeedBack.class" afterPath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/Domains/FeedBack.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/DAOImplementation/FeedBackDAOImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/DAOImplementation/FeedBackDAOImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/Controllers/GlobalExceptionHandler.class" afterPath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/Controllers/GlobalExceptionHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/Controllers/InformationController.class" afterPath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/Controllers/InformationController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/Domains/Order.class" afterPath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/Domains/Order.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/Controllers/OrderController.class" afterPath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/Controllers/OrderController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/DAOImplementation/OrderDAOImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/DAOImplementation/OrderDAOImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/Domains/Post.class" afterPath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/Domains/Post.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/DAOImplementation/PostDAOImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/DAOImplementation/PostDAOImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/Domains/Product.class" afterPath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/Domains/Product.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/Controllers/ProductController.class" afterPath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/Controllers/ProductController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/DAOImplementation/ProductDAOImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/DAOImplementation/ProductDAOImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/Domains/ProductInCart.class" afterPath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/Domains/ProductInCart.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/DAOImplementation/ProductInCartDAOImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/DAOImplementation/ProductInCartDAOImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/Configurations/WebInitializer.class" afterPath="$PROJECT_DIR$/target/classes/com/gmail/liliyayalovchenko/Configurations/WebInitializer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Configurations/AppConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Configurations/AppConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/CategoryController.java" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/CategoryController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/GlobalExceptionHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/GlobalExceptionHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/InformationController.java" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/InformationController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Domains/Category.java" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Domains/Category.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/CategoryDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/CategoryDAOImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Domains/Client.java" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Domains/Client.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAO/ClientDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAO/ClientDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/ClientDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/ClientDAOImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Services/ClientService.java" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Services/ClientService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Domains/FeedBack.java" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Domains/FeedBack.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Domains/Order.java" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Domains/Order.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/OrderController.java" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/OrderController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Domains/Post.java" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Domains/Post.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Domains/Product.java" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Domains/Product.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/ProductController.java" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/ProductController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Domains/ProductInCart.java" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Domains/ProductInCart.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/ProductInCartDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/ProductInCartDAOImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Services/ProductService.java" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Services/ProductService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Configurations/WebInitializer.java" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Configurations/WebInitializer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/adminIndex.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/adminIndex.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/adminOrder.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/adminOrder.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/product.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/product.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="BrushShop.iws" />
@@ -59,24 +385,6 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - beautydbRus@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="beautydbRus" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="Products" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -84,153 +392,97 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AppConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Configurations/AppConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1670" max-vertical-offset="3726">
-              <caret line="116" column="4" selection-start-line="116" selection-start-column="4" selection-end-line="116" selection-end-column="4" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1493#1494#0" expanded="true" />
-                <element signature="e#1543#1544#0" expanded="true" />
-                <element signature="e#1603#1604#0" expanded="true" />
-                <element signature="e#1652#1653#0" expanded="true" />
-                <element signature="e#1702#1703#0" expanded="true" />
-                <element signature="e#1746#1747#0" expanded="true" />
-                <element signature="e#1792#1793#0" expanded="true" />
-                <element signature="e#1834#1835#0" expanded="true" />
-                <element signature="e#1884#1885#0" expanded="true" />
-                <element signature="e#1928#1929#0" expanded="true" />
-                <element signature="e#1977#1978#0" expanded="true" />
-                <element signature="e#2017#2018#0" expanded="true" />
-                <element signature="e#2061#2062#0" expanded="true" />
-                <element signature="e#2102#2103#0" expanded="true" />
-                <element signature="e#2150#2151#0" expanded="true" />
-                <element signature="e#2193#2194#0" expanded="true" />
-                <element signature="e#2253#2254#0" expanded="true" />
-                <element signature="e#2302#2303#0" expanded="true" />
-                <element signature="e#2370#2371#0" expanded="true" />
-                <element signature="e#2419#2420#0" expanded="true" />
-                <element signature="e#2477#2478#0" expanded="true" />
-                <element signature="e#2521#2522#0" expanded="true" />
-                <element signature="e#2575#2576#0" expanded="true" />
-                <element signature="e#2617#2618#0" expanded="true" />
-                <element signature="e#2675#2676#0" expanded="true" />
-                <element signature="e#2719#2720#0" expanded="true" />
-                <element signature="e#2771#2772#0" expanded="true" />
-                <element signature="e#2812#2813#0" expanded="true" />
-                <element signature="e#2862#2863#0" expanded="true" />
-                <element signature="e#2902#2903#0" expanded="true" />
-                <element signature="e#2970#2971#0" expanded="true" />
-                <element signature="e#3019#3020#0" expanded="true" />
-                <element signature="e#3075#3076#0" expanded="true" />
-                <element signature="e#3118#3119#0" expanded="true" />
-                <element signature="e#3575#3576#0" expanded="true" />
-                <element signature="e#3628#3629#0" expanded="true" />
-                <element signature="e#3673#3674#0" expanded="true" />
-                <element signature="e#3704#3705#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductInCartService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Services/ProductInCartService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
-              <caret line="39" column="18" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#485#486#0" expanded="true" />
-                <element signature="e#544#545#0" expanded="true" />
-                <element signature="e#783#784#0" expanded="true" />
-                <element signature="e#848#849#0" expanded="true" />
-                <element signature="e#911#912#0" expanded="true" />
-                <element signature="e#962#963#0" expanded="true" />
-                <element signature="e#1030#1031#0" expanded="true" />
-                <element signature="e#1078#1079#0" expanded="true" />
-                <element signature="e#1157#1158#0" expanded="true" />
-                <element signature="e#1218#1219#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrderController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/OrderController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3636">
-              <caret line="216" column="0" selection-start-line="216" selection-start-column="0" selection-end-line="216" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/ProductController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9381443" vertical-offset="3540" max-vertical-offset="4248">
-              <caret line="248" column="5" selection-start-line="248" selection-start-column="5" selection-end-line="248" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductInCartDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAO/ProductInCartDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
-              <caret line="19" column="50" selection-start-line="9" selection-start-column="4" selection-end-line="19" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="WebInitializer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Configurations/WebInitializer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="468">
-              <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558">
+              <caret line="21" column="105" selection-start-line="21" selection-start-column="105" selection-end-line="21" selection-end-column="105" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdminController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/AdminController.java">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="18912" max-vertical-offset="19566">
-              <caret line="1087" column="50" selection-start-line="1087" selection-start-column="50" selection-end-line="1087" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="271" max-vertical-offset="3024">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CategoryController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/CategoryController.java">
+      <file leaf-file-name="adminOrder.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/adminOrder.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4052" max-vertical-offset="5544">
-              <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+            <state vertical-scroll-proportion="-6.4074073" vertical-offset="439" max-vertical-offset="3816">
+              <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GlobalExceptionHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/GlobalExceptionHandler.java">
+      <file leaf-file-name="ClientDAOImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/ClientDAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="899" max-vertical-offset="1566">
-              <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="844" max-vertical-offset="1944">
+              <caret line="64" column="49" selection-start-line="64" selection-start-column="3" selection-end-line="64" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InformationController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/InformationController.java">
+      <file leaf-file-name="ProductInCartDAOImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/ProductInCartDAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="256" max-vertical-offset="2034">
-              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="1134">
+              <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="61" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jdbc.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="logback.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/logback.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="576">
+              <caret line="12" column="54" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppConfig.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Configurations/AppConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="7.065" vertical-offset="0" max-vertical-offset="3294">
+              <caret line="193" column="120" selection-start-line="193" selection-start-column="120" selection-end-line="193" selection-end-column="120" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1543#1544#0" expanded="true" />
+                <element signature="e#1593#1594#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="918">
+              <caret line="15" column="76" selection-start-line="15" selection-start-column="76" selection-end-line="15" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -244,57 +496,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="db-console:/bcc2d5a0/92b518ba-b07d-4559-82dc-e5177472709e/" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/adminPosts.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAO/ProductDAO.java" />
-        <option value="dbtable:/bcc2d5a0/92b518ba-b07d-4559-82dc-e5177472709e/beautydbRus..Products" />
-        <option value="dbtable:/bcc2d5a0/92b518ba-b07d-4559-82dc-e5177472709e/beautydbRus..Orders" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/maintance.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/sale.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/search.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/product.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/ordering.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/news.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/error.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/category.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/catalog.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/cart.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/brand.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/article.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/about.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/404.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Configurations/AppLogging.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/contact.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/META-INF/jdbc.properties" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/AdministratorDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/CategoryDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/ClientDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/FeedBackDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/OrderDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/PostDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/ProductDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/ProductInCartDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Services/AdministratorService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Services/CategoryService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Services/ClientService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Services/FeedBackService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Services/OrderService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Services/PostService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Services/ProductService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Services/ProductInCartService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Configurations/AppConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Configurations/WebInitializer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/AdminController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/CategoryController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/GlobalExceptionHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/InformationController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/Notification.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/OrderController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/META-INF/jdbc.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Services/ProductService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/ProductDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/catalog.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Domains/Category.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Domains/Client.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Domains/Mail.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Domains/ProductInCart.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Domains/Order.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/CategoryDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Domains/Post.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Domains/FeedBack.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Domains/Product.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/product.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/ClientDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAO/ClientDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Services/ClientService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/ProductController.java" />
+        <option value="dbtable:/4e37b62f/92b518ba-b07d-4559-82dc-e5177472709e/beautydbRus..Admins" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/OrderController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Configurations/MyConnectionCustomizer.java" />
+        <option value="dbtable:/4e37b62f/92b518ba-b07d-4559-82dc-e5177472709e/beautydbRus..Products" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/adminOrder.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/adminIndex.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/ProductInCartDAOImpl.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Configurations/WebInitializer.java" />
+        <option value="db-console:/4e37b62f/92b518ba-b07d-4559-82dc-e5177472709e/" />
+        <option value="dbtable:/4e37b62f/92b518ba-b07d-4559-82dc-e5177472709e/beautydbRus..Clients" />
+        <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Configurations/AppConfig.java" />
       </list>
     </option>
   </component>
@@ -377,7 +629,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -393,6 +644,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="BrushShop3cpo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrushShop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrushShop3cpo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="target" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -431,6 +696,36 @@
               <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrushShop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrushShop3cpo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -453,8 +748,30 @@
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="META-INF" />
+              <option name="myItemId" value="BrushShop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrushShop3cpo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liliyayalovchenko" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -484,7 +801,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Services" />
+              <option name="myItemId" value="Domains" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -511,6 +828,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="liliyayalovchenko" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DAOImplementation" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -546,6 +867,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -558,7 +880,7 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2266055" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -569,7 +891,7 @@
     <property name="dynamic.classpath" value="false" />
     <property name="FullScreen" value="false" />
     <property name="ignore_missing_gitignore" value="true" />
-    <property name="options.lastSelected" value="reference.settings.project.maven.runner" />
+    <property name="options.lastSelected" value="File.Encoding" />
     <property name="options.splitter.main.proportions" value="0.29915836" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="LayoutCode.rearrangeEntriesJSP" value="false" />
@@ -587,6 +909,7 @@
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/resources/META-INF" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -877,11 +1200,10 @@
       <method />
     </configuration>
     <configuration default="false" name="Unnamed" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.26" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
-      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
+      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="BrushShop:war exploded">
+        <artifact name="e-shop:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
@@ -889,7 +1211,7 @@
       </deployment>
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="Unnamed_BrushShop" />
-        <option name="JNDI_PORT" value="2001" />
+        <option name="JNDI_PORT" value="2002" />
       </server-settings>
       <predefined_log_file id="Tomcat" enabled="true" />
       <predefined_log_file id="Tomcat Catalina" enabled="true" />
@@ -951,7 +1273,7 @@
       </ConfigurationWrapper>
       <method>
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="BrushShop:war exploded" />
+          <artifact name="e-shop:war exploded" />
         </option>
       </method>
     </configuration>
@@ -960,6 +1282,11 @@
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SliceManager">
+    <option name="analysisUIOptions">
+      <AnalysisUIOptions />
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -1033,53 +1360,60 @@
       <workItem from="1486821714886" duration="3552000" />
       <workItem from="1487063801087" duration="15935000" />
       <workItem from="1487411304076" duration="14000" />
-      <workItem from="1487411454136" duration="22113000" />
+      <workItem from="1487411454136" duration="22749000" />
+      <workItem from="1487581905544" duration="21194000" />
+      <workItem from="1487668586498" duration="12005000" />
+      <workItem from="1487763202255" duration="2106000" />
+      <workItem from="1487765337031" duration="12655000" />
+      <workItem from="1487788374597" duration="804000" />
+      <workItem from="1487856247929" duration="5533000" />
+      <workItem from="1489672701258" duration="5732000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="540800000" />
+    <option name="totallyTimeSpent" value="601465000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="45" y="24" width="1321" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="top" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6784" sideWeight="0.50039214" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25333333" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25333333" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25333333" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24941176" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24941176" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="top" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" x="145" y="224" width="1121" height="544" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6688" sideWeight="0.49960783" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2912" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2698039" sideWeight="0.5008" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2912" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3027451" sideWeight="0.87857145" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2835131" sideWeight="0.12142857" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2698039" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Documentation" active="false" anchor="top" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" x="145" y="224" width="1121" height="544" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.192" sideWeight="0.49960783" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4784" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4784" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2698039" sideWeight="0.5008" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1100,7 +1434,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1109,469 +1443,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/sale.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-32.74074" vertical-offset="34" max-vertical-offset="9072">
-          <caret line="51" column="28" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/search.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.481482" vertical-offset="4181" max-vertical-offset="9036">
-          <caret line="260" column="19" selection-start-line="234" selection-start-column="12" selection-end-line="260" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/product.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-35.333332" vertical-offset="0" max-vertical-offset="10818">
-          <caret line="53" column="38" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/ordering.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-31.333334" vertical-offset="0" max-vertical-offset="7488">
-          <caret line="47" column="38" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/news.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-34.666668" vertical-offset="0" max-vertical-offset="8388">
-          <caret line="52" column="38" selection-start-line="52" selection-start-column="38" selection-end-line="52" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/maintance.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="4284">
-          <caret line="80" column="71" selection-start-line="80" selection-start-column="71" selection-end-line="80" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/error.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="414">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/category.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1255" max-vertical-offset="9630">
-          <caret line="51" column="62" selection-start-line="51" selection-start-column="62" selection-end-line="51" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/catalog.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="7382" max-vertical-offset="9162">
-          <caret line="51" column="28" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/cart.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="9128" max-vertical-offset="9738">
-          <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/brand.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-59.37037" vertical-offset="1097" max-vertical-offset="8604">
-          <caret line="150" column="143" selection-start-line="150" selection-start-column="118" selection-end-line="150" selection-end-column="143" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/article.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-33.333332" vertical-offset="0" max-vertical-offset="7110">
-          <caret line="50" column="62" selection-start-line="50" selection-start-column="62" selection-end-line="50" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3821" max-vertical-offset="8550">
-          <caret line="224" column="81" selection-start-line="223" selection-start-column="35" selection-end-line="224" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/about.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="16" max-vertical-offset="8568">
-          <caret line="48" column="28" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/404.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5078" max-vertical-offset="6246">
-          <caret line="287" column="0" selection-start-line="287" selection-start-column="0" selection-end-line="287" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Configurations/AppLogging.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="738">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/logback.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BrushShop3cpo.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="1728">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1938" max-vertical-offset="2898">
-          <caret line="154" column="4" selection-start-line="154" selection-start-column="4" selection-end-line="154" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2705883" vertical-offset="0" max-vertical-offset="918">
-          <caret line="42" column="21" selection-start-line="39" selection-start-column="8" selection-end-line="42" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/contact.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44504505" vertical-offset="8105" max-vertical-offset="8928">
-          <caret line="464" column="0" selection-start-line="463" selection-start-column="8" selection-end-line="464" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/jdbc.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.556701" vertical-offset="0" max-vertical-offset="582">
-          <caret line="18" column="40" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/OrderDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2070">
-          <caret line="21" column="55" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/PostDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2538">
-          <caret line="20" column="55" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/ProductDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4716">
-          <caret line="24" column="55" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/ProductInCartDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1278">
-          <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/AdministratorDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1095" max-vertical-offset="1764">
-          <caret line="77" column="69" selection-start-line="76" selection-start-column="4" selection-end-line="77" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#2685#2686#0" expanded="false" />
-            <element signature="e#2755#2756#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Services/AdministratorService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1062">
-          <caret line="44" column="18" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#482#483#0" expanded="false" />
-            <element signature="e#544#545#0" expanded="false" />
-            <element signature="e#615#616#0" expanded="false" />
-            <element signature="e#677#678#0" expanded="false" />
-            <element signature="e#752#753#0" expanded="false" />
-            <element signature="e#812#813#0" expanded="false" />
-            <element signature="e#880#881#0" expanded="false" />
-            <element signature="e#936#937#0" expanded="false" />
-            <element signature="e#1003#1004#0" expanded="false" />
-            <element signature="e#1056#1057#0" expanded="false" />
-            <element signature="e#1133#1134#0" expanded="false" />
-            <element signature="e#1190#1191#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/CategoryDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="598" max-vertical-offset="1206">
-          <caret line="66" column="32" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Services/CategoryService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="214" max-vertical-offset="918">
-          <caret line="40" column="18" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#469#470#0" expanded="false" />
-            <element signature="e#536#537#0" expanded="false" />
-            <element signature="e#602#603#0" expanded="false" />
-            <element signature="e#656#657#0" expanded="false" />
-            <element signature="e#726#727#0" expanded="false" />
-            <element signature="e#776#777#0" expanded="false" />
-            <element signature="e#1118#1119#0" expanded="false" />
-            <element signature="e#1171#1172#0" expanded="false" />
-            <element signature="e#1224#1225#0" expanded="false" />
-            <element signature="e#1262#1263#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/ClientDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1127" max-vertical-offset="1728">
-          <caret line="93" column="39" selection-start-line="93" selection-start-column="4" selection-end-line="93" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Services/ClientService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="593" max-vertical-offset="1188">
-          <caret line="54" column="18" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#436#437#0" expanded="false" />
-            <element signature="e#481#482#0" expanded="false" />
-            <element signature="e#545#546#0" expanded="false" />
-            <element signature="e#595#596#0" expanded="false" />
-            <element signature="e#660#661#0" expanded="false" />
-            <element signature="e#711#712#0" expanded="false" />
-            <element signature="e#769#770#0" expanded="false" />
-            <element signature="e#815#816#0" expanded="false" />
-            <element signature="e#901#902#0" expanded="false" />
-            <element signature="e#965#966#0" expanded="false" />
-            <element signature="e#1037#1038#0" expanded="false" />
-            <element signature="e#1094#1095#0" expanded="false" />
-            <element signature="e#1315#1316#0" expanded="false" />
-            <element signature="e#1358#1359#0" expanded="false" />
-            <element signature="e#1418#1419#0" expanded="false" />
-            <element signature="e#1458#1459#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/FeedBackDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2178">
-          <caret line="22" column="49" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAO/FeedBackDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="666">
-          <caret line="32" column="39" selection-start-line="10" selection-start-column="4" selection-end-line="32" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Services/FeedBackService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1458">
-          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#480#481#0" expanded="false" />
-            <element signature="e#530#531#0" expanded="false" />
-            <element signature="e#596#597#0" expanded="false" />
-            <element signature="e#648#649#0" expanded="false" />
-            <element signature="e#733#734#0" expanded="false" />
-            <element signature="e#800#801#0" expanded="false" />
-            <element signature="e#1022#1023#0" expanded="false" />
-            <element signature="e#1076#1077#0" expanded="false" />
-            <element signature="e#1140#1141#0" expanded="false" />
-            <element signature="e#1184#1185#0" expanded="false" />
-            <element signature="e#1431#1432#0" expanded="false" />
-            <element signature="e#1489#1490#0" expanded="false" />
-            <element signature="e#1563#1564#0" expanded="false" />
-            <element signature="e#1623#1624#0" expanded="false" />
-            <element signature="e#1697#1698#0" expanded="false" />
-            <element signature="e#1757#1758#0" expanded="false" />
-            <element signature="e#1829#1830#0" expanded="false" />
-            <element signature="e#1887#1888#0" expanded="false" />
-            <element signature="e#1955#1956#0" expanded="false" />
-            <element signature="e#2003#2004#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAO/OrderDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="666">
-          <caret line="31" column="45" selection-start-line="23" selection-start-column="4" selection-end-line="31" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Services/OrderService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="1314">
           <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#509#510#0" expanded="false" />
-            <element signature="e#553#554#0" expanded="false" />
-            <element signature="e#806#807#0" expanded="false" />
-            <element signature="e#846#847#0" expanded="false" />
-            <element signature="e#907#908#0" expanded="false" />
-            <element signature="e#948#949#0" expanded="false" />
-            <element signature="e#1005#1006#0" expanded="false" />
-            <element signature="e#1048#1049#0" expanded="false" />
-            <element signature="e#1281#1282#0" expanded="false" />
-            <element signature="e#1332#1333#0" expanded="false" />
-            <element signature="e#1399#1400#0" expanded="false" />
-            <element signature="e#1452#1453#0" expanded="false" />
-            <element signature="e#1521#1522#0" expanded="false" />
-            <element signature="e#1577#1578#0" expanded="false" />
-            <element signature="e#1651#1652#0" expanded="false" />
-            <element signature="e#1707#1708#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAO/PostDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="48" max-vertical-offset="702">
-          <caret line="33" column="45" selection-start-line="10" selection-start-column="4" selection-end-line="33" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Services/PostService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="267" max-vertical-offset="1530">
-          <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#448#449#0" expanded="true" />
-            <element signature="e#492#493#0" expanded="true" />
-            <element signature="e#542#543#0" expanded="true" />
-            <element signature="e#580#581#0" expanded="true" />
-            <element signature="e#636#637#0" expanded="true" />
-            <element signature="e#677#678#0" expanded="true" />
-            <element signature="e#737#738#0" expanded="true" />
-            <element signature="e#783#784#0" expanded="true" />
-            <element signature="e#845#846#0" expanded="true" />
-            <element signature="e#893#894#0" expanded="true" />
-            <element signature="e#950#951#0" expanded="true" />
-            <element signature="e#987#988#0" expanded="true" />
-            <element signature="e#1040#1041#0" expanded="true" />
-            <element signature="e#1074#1075#0" expanded="true" />
-            <element signature="e#1133#1134#0" expanded="true" />
-            <element signature="e#1178#1179#0" expanded="true" />
-            <element signature="e#1694#1695#0" expanded="true" />
-            <element signature="e#1744#1745#0" expanded="true" />
-            <element signature="e#1810#1811#0" expanded="true" />
-            <element signature="e#1862#1863#0" expanded="true" />
-            <element signature="e#1936#1937#0" expanded="true" />
-            <element signature="e#1988#1989#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAO/ProductDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="1062">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="56" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Services/ProductService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="896" max-vertical-offset="2070">
-          <caret line="58" column="57" selection-start-line="58" selection-start-column="57" selection-end-line="58" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#490#491#0" expanded="false" />
-            <element signature="e#540#541#0" expanded="false" />
-            <element signature="e#725#726#0" expanded="false" />
-            <element signature="e#777#778#0" expanded="false" />
-            <element signature="e#837#838#0" expanded="false" />
-            <element signature="e#898#899#0" expanded="false" />
-            <element signature="e#959#960#0" expanded="false" />
-            <element signature="e#1018#1019#0" expanded="false" />
-            <element signature="e#1066#1067#0" expanded="false" />
-            <element signature="e#1113#1114#0" expanded="false" />
-            <element signature="e#1960#1961#0" expanded="false" />
-            <element signature="e#2009#2010#0" expanded="false" />
-            <element signature="e#2209#2210#0" expanded="false" />
-            <element signature="e#2275#2276#0" expanded="false" />
-            <element signature="e#2321#2322#0" expanded="false" />
-            <element signature="e#2372#2373#0" expanded="false" />
-            <element signature="e#2416#2417#0" expanded="false" />
-            <element signature="e#2465#2466#0" expanded="false" />
-            <element signature="e#2518#2519#0" expanded="false" />
-            <element signature="e#2569#2570#0" expanded="false" />
-            <element signature="e#2623#2624#0" expanded="false" />
-            <element signature="e#2676#2677#0" expanded="false" />
-            <element signature="e#2722#2723#0" expanded="false" />
-            <element signature="e#2771#2772#0" expanded="false" />
-            <element signature="e#2805#2806#0" expanded="false" />
-            <element signature="e#2842#2843#0" expanded="false" />
-            <element signature="e#2883#2884#0" expanded="false" />
-            <element signature="e#2931#2932#0" expanded="false" />
-            <element signature="e#3444#3445#0" expanded="false" />
-            <element signature="e#3500#3501#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1579,91 +1454,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
           <caret line="19" column="50" selection-start-line="9" selection-start-column="4" selection-end-line="19" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Services/ProductInCartService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
-          <caret line="39" column="18" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#485#486#0" expanded="true" />
-            <element signature="e#544#545#0" expanded="true" />
-            <element signature="e#783#784#0" expanded="true" />
-            <element signature="e#848#849#0" expanded="true" />
-            <element signature="e#911#912#0" expanded="true" />
-            <element signature="e#962#963#0" expanded="true" />
-            <element signature="e#1030#1031#0" expanded="true" />
-            <element signature="e#1078#1079#0" expanded="true" />
-            <element signature="e#1157#1158#0" expanded="true" />
-            <element signature="e#1218#1219#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Configurations/AppConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1670" max-vertical-offset="3726">
-          <caret line="116" column="4" selection-start-line="116" selection-start-column="4" selection-end-line="116" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1493#1494#0" expanded="true" />
-            <element signature="e#1543#1544#0" expanded="true" />
-            <element signature="e#1603#1604#0" expanded="true" />
-            <element signature="e#1652#1653#0" expanded="true" />
-            <element signature="e#1702#1703#0" expanded="true" />
-            <element signature="e#1746#1747#0" expanded="true" />
-            <element signature="e#1792#1793#0" expanded="true" />
-            <element signature="e#1834#1835#0" expanded="true" />
-            <element signature="e#1884#1885#0" expanded="true" />
-            <element signature="e#1928#1929#0" expanded="true" />
-            <element signature="e#1977#1978#0" expanded="true" />
-            <element signature="e#2017#2018#0" expanded="true" />
-            <element signature="e#2061#2062#0" expanded="true" />
-            <element signature="e#2102#2103#0" expanded="true" />
-            <element signature="e#2150#2151#0" expanded="true" />
-            <element signature="e#2193#2194#0" expanded="true" />
-            <element signature="e#2253#2254#0" expanded="true" />
-            <element signature="e#2302#2303#0" expanded="true" />
-            <element signature="e#2370#2371#0" expanded="true" />
-            <element signature="e#2419#2420#0" expanded="true" />
-            <element signature="e#2477#2478#0" expanded="true" />
-            <element signature="e#2521#2522#0" expanded="true" />
-            <element signature="e#2575#2576#0" expanded="true" />
-            <element signature="e#2617#2618#0" expanded="true" />
-            <element signature="e#2675#2676#0" expanded="true" />
-            <element signature="e#2719#2720#0" expanded="true" />
-            <element signature="e#2771#2772#0" expanded="true" />
-            <element signature="e#2812#2813#0" expanded="true" />
-            <element signature="e#2862#2863#0" expanded="true" />
-            <element signature="e#2902#2903#0" expanded="true" />
-            <element signature="e#2970#2971#0" expanded="true" />
-            <element signature="e#3019#3020#0" expanded="true" />
-            <element signature="e#3075#3076#0" expanded="true" />
-            <element signature="e#3118#3119#0" expanded="true" />
-            <element signature="e#3575#3576#0" expanded="true" />
-            <element signature="e#3628#3629#0" expanded="true" />
-            <element signature="e#3673#3674#0" expanded="true" />
-            <element signature="e#3704#3705#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Configurations/WebInitializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="468">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/AdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="18912" max-vertical-offset="19566">
-          <caret line="1087" column="50" selection-start-line="1087" selection-start-column="50" selection-end-line="1087" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1671,39 +1461,382 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="899" max-vertical-offset="1566">
           <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Services/ProductInCartService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="125" max-vertical-offset="720">
+          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Configurations/AppLogging.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.72164947" vertical-offset="156" max-vertical-offset="738">
+          <caret line="40" column="16" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/InformationController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Services/CategoryService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="256" max-vertical-offset="2034">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="13" max-vertical-offset="648">
+          <caret line="37" column="43" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/CategoryController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4052" max-vertical-offset="5544">
-          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="10" max-vertical-offset="5544">
+          <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Services/ProductService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="1980">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.0740743" vertical-offset="1618" max-vertical-offset="8550">
+          <caret line="99" column="49" selection-start-line="99" selection-start-column="49" selection-end-line="99" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/catalog.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9629629" vertical-offset="3691" max-vertical-offset="9162">
+          <caret line="211" column="0" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/FeedBackDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2178">
+          <caret line="22" column="49" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Domains/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="133" max-vertical-offset="972">
+          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Domains/ProductInCart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2610">
+          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Domains/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1926">
+          <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/CategoryDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="534" max-vertical-offset="1224">
+          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Services/PostService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="33" max-vertical-offset="1062">
+          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/InformationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1155" max-vertical-offset="2034">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/PostDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2358">
+          <caret line="23" column="46" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAO/PostDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="48" max-vertical-offset="702">
+          <caret line="33" column="45" selection-start-line="10" selection-start-column="4" selection-end-line="33" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Domains/Post.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1674">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Domains/FeedBack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1854">
+          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Domains/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="696" max-vertical-offset="4536">
+          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/ProductDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2284" max-vertical-offset="4464">
+          <caret line="35" column="57" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/cart.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.481482" vertical-offset="5153" max-vertical-offset="9738">
+          <caret line="299" column="105" selection-start-line="299" selection-start-column="79" selection-end-line="299" selection-end-column="105" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/OrderController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/product.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3636">
-          <caret line="216" column="0" selection-start-line="216" selection-start-column="0" selection-end-line="216" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="-9.592592" vertical-offset="7445" max-vertical-offset="10818">
+          <caret line="428" column="97" selection-start-line="428" selection-start-column="97" selection-end-line="428" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAO/ProductDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="1062">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Services/ClientService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="228" max-vertical-offset="900">
+          <caret line="46" column="50" selection-start-line="46" selection-start-column="50" selection-end-line="46" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAO/ClientDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="594">
+          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/4e37b62f/92b518ba-b07d-4559-82dc-e5177472709e/beautydbRus..Admins">
+      <provider editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="533">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/ProductController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9381443" vertical-offset="3540" max-vertical-offset="4248">
-          <caret line="248" column="5" selection-start-line="248" selection-start-column="5" selection-end-line="248" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2918" max-vertical-offset="4392">
+          <caret line="201" column="48" selection-start-line="201" selection-start-column="48" selection-end-line="201" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/e-shop.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1602">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/OrderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1277" max-vertical-offset="3672">
+          <caret line="104" column="81" selection-start-line="104" selection-start-column="81" selection-end-line="104" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Domains/Category.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="2016">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/4e37b62f/92b518ba-b07d-4559-82dc-e5177472709e/beautydbRus..Products">
+      <provider editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="25" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Controllers/AdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="686" max-vertical-offset="19566">
+          <caret line="1087" column="50" selection-start-line="1087" selection-start-column="50" selection-end-line="1087" selection-end-column="50" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/adminLogin.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="522" max-vertical-offset="1998">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/adminIndex.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="515" max-vertical-offset="5346">
+          <caret line="41" column="56" selection-start-line="41" selection-start-column="56" selection-end-line="41" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/OrderDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.1701031" vertical-offset="861" max-vertical-offset="1872">
+          <caret line="21" column="55" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/ProductInCartDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="1134">
+          <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="271" max-vertical-offset="3024">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-orm/4.3.1.RELEASE/spring-orm-4.3.1.RELEASE.jar!/org/springframework/orm/hibernate5/LocalSessionFactoryBean.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33269963" vertical-offset="2093" max-vertical-offset="5040">
+          <caret line="176" column="55" selection-start-line="176" selection-start-column="54" selection-end-line="176" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
+          <caret line="15" column="76" selection-start-line="15" selection-start-column="76" selection-end-line="15" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/DAOImplementation/ClientDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="844" max-vertical-offset="1944">
+          <caret line="64" column="49" selection-start-line="64" selection-start-column="3" selection-end-line="64" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/4e37b62f/92b518ba-b07d-4559-82dc-e5177472709e/beautydbRus..Clients">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://db-console:/4e37b62f/92b518ba-b07d-4559-82dc-e5177472709e/">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.39417988" vertical-offset="545" max-vertical-offset="1260">
+          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/adminOrder.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.4074073" vertical-offset="439" max-vertical-offset="3816">
+          <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Configurations/WebInitializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558">
+          <caret line="21" column="105" selection-start-line="21" selection-start-column="105" selection-end-line="21" selection-end-column="105" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/logback.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="576">
+          <caret line="12" column="54" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/Hashtable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3292683" vertical-offset="7452" max-vertical-offset="23958">
+          <caret line="458" column="0" selection-start-line="458" selection-start-column="0" selection-end-line="458" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gmail/liliyayalovchenko/Configurations/AppConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="7.065" vertical-offset="0" max-vertical-offset="3294">
+          <caret line="193" column="120" selection-start-line="193" selection-start-column="120" selection-end-line="193" selection-end-column="120" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1543#1544#0" expanded="true" />
+            <element signature="e#1593#1594#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1713,7 +1846,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>BrushShop:war exploded</last-edited>
+          <last-edited>e-shop:war exploded</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1726,7 +1859,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>JPA</last-edited>
+          <last-edited>Web (e-shop)|Web</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1762,7 +1895,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>BrushShop</last-edited>
+          <last-edited>e-shop</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

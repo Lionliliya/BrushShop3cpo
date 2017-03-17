@@ -24,4 +24,6 @@ public interface ClientDAO {
     List<Client> getSortedByEmail();
 
     void remove(Client client);
+
+    Client findClientByPhone(String phone);
 }

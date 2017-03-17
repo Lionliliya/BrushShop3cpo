@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="BrushShop:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="e-shop-4.1-runtime-ex.war">
-      <element id="artifact" artifact-name="BrushShop:war exploded" />
-    </root>
-  </artifact>
-</component>

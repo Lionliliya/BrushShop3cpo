@@ -20,6 +20,7 @@ public class ProductInCartDAOImpl implements ProductInCartDAO {
     @Transactional(propagation = Propagation.MANDATORY)
     public void delete(ProductInCart product) {
         Session session = sessionFactory.getCurrentSession();
+
         session.delete(product);
     }
 

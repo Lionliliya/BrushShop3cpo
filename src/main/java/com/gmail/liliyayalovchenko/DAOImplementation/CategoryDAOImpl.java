@@ -68,5 +68,6 @@ public class CategoryDAOImpl implements CategoryDAO {
         Session session = sessionFactory.getCurrentSession();
         Category category = session.load(Category.class, id);
         session.delete(category);
+
     }
 }

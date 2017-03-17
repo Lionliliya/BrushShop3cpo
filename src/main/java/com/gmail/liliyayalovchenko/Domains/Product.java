@@ -1,15 +1,22 @@
 package com.gmail.liliyayalovchenko.Domains;
 
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+import org.hibernate.annotations.Proxy;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name="Products")
+@Proxy(lazy = false)
 public class Product implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name = "increment", strategy = "increment")
     private int id;
 
     @Column(name="Pname", nullable = false)
@@ -18,9 +25,11 @@ public class Product implements Serializable {
     @Column(nullable = false)
     private int price;
 
+    @Column
     private String currency;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH})
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH})
     @JoinColumn(name = "category_id", nullable = false)
     private Category productCategory;
 
@@ -52,7 +61,8 @@ public class Product implements Serializable {
     @Column(name = "discount")
     private int discount;
 
-    @OneToMany(cascade=CascadeType.ALL, fetch = FetchType.LAZY)
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @OneToMany(cascade=CascadeType.ALL)
     private List<FeedBack> feedBackList;
 
     @Column(name="KeyWord")

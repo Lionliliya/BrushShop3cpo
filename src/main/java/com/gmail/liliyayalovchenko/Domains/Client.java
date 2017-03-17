@@ -1,16 +1,19 @@
 package com.gmail.liliyayalovchenko.Domains;
 
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 
 @Entity
 @Table(name="Clients")
 public class Client implements Serializable{
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name = "increment", strategy = "increment")
+    @Column
     private int id;
     @Column(name= "FirstName", nullable = false)
     private String firstName;

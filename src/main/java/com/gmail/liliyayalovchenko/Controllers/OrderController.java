@@ -101,6 +101,8 @@ public class OrderController {
         if (client == null) {
             client = new Client(firstName, phoneNumber, email);
         }
+
+        System.out.println("-----------Name " + firstName + " -------------------");
         clientService.addClient(client);
         int amount = 0;
         for (ProductInCart aProductsCart1 : productsInCart) {

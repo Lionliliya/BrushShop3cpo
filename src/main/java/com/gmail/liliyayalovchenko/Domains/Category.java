@@ -1,22 +1,35 @@
 package com.gmail.liliyayalovchenko.Domains;
 
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Proxy;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 @Table(name="Categories")
+@Proxy(lazy = false)
 public class Category implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name = "increment", strategy = "increment")
+    @Column
     private int id;
+
     @Column(name="Cname", nullable = false)
     private String name;
+
+    @Column
     private String info;
+
     @Column(name="KeyWord")
     private String metaKeyWords;
+
     @Column(name = "MetaDesc")
     private String metaDescription;
+
+    @Column
     private String metaTitle;
 
     public Category() {}
@@ -101,5 +114,17 @@ public class Category implements Serializable {
         result = 31 * result + metaDescription.hashCode();
         result = 31 * result + metaTitle.hashCode();
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", info='" + info + '\'' +
+                ", metaKeyWords='" + metaKeyWords + '\'' +
+                ", metaDescription='" + metaDescription + '\'' +
+                ", metaTitle='" + metaTitle + '\'' +
+                '}';
     }
 }

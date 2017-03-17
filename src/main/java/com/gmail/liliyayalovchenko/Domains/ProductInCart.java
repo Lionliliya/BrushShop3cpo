@@ -1,5 +1,7 @@
 package com.gmail.liliyayalovchenko.Domains;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -8,7 +10,9 @@ import java.io.Serializable;
 public class ProductInCart implements Serializable{
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name = "increment", strategy = "increment")
+    @Column
     private int product_In_Cart_id;
 
     @OneToOne (fetch = FetchType.LAZY, cascade = {CascadeType.DETACH, CascadeType.REFRESH, CascadeType.PERSIST, CascadeType.MERGE})

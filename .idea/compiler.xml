@@ -23,10 +23,12 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="BrushShop" />
+        <module name="e-shop" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="BrushShop" target="1.8" />
+      <module name="e-shop" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,15 +1,21 @@
 package com.gmail.liliyayalovchenko.Domains;
 
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Proxy;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name="Info")
+@Proxy(lazy = false)
 public class Post implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name = "increment", strategy = "increment")
+    @Column
     private int id;
     @Column(nullable = false)
     private String title;

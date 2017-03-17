@@ -62,6 +62,18 @@ public class ClientDAOImpl implements ClientDAO {
 
     @Override
     @Transactional(propagation = Propagation.MANDATORY)
+    public Client findClientByPhone(String phone) {
+        Session session = sessionFactory.getCurrentSession();
+        Client client = (Client) session.createQuery
+                ("SELECT a FROM Client a WHERE  a.phoneNumber =:var2")
+                .setParameter("var2", phone)
+                .list().get(0);
+
+        return client;
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public Client findClientByEmail(String email) {
         Session session = sessionFactory.getCurrentSession();
         Client client = (Client) session.createQuery
@@ -79,14 +91,14 @@ public class ClientDAOImpl implements ClientDAO {
         client.setFirstName(name);
         client.setPhoneNumber(phone);
         client.setEmail(email);
-        session.save(client);
+        session.update(client);
     }
 
     @Override
     @Transactional(propagation = Propagation.MANDATORY)
     public void addClient(Client client) {
         Session session = sessionFactory.getCurrentSession();
-        session.update(client);
+        session.save(client);
     }
 
     @Override
