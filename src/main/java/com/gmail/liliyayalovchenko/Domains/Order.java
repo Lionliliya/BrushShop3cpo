@@ -3,6 +3,7 @@ package com.gmail.liliyayalovchenko.Domains;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
+import org.hibernate.annotations.Proxy;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -11,6 +12,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "Orders")
+@Proxy(lazy = false)
 public class Order implements Serializable {
 
     @Id
@@ -25,10 +27,15 @@ public class Order implements Serializable {
     private String comments;
 
     @LazyCollection(LazyCollectionOption.FALSE)
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH})
+    @ManyToOne()
     @JoinColumn(name = "client_id")
     private Client client;
     private int totalAmount;
+
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
+    List<ProductInCart> productInCartList;
+
 
     public Order() {}
 
@@ -108,6 +115,14 @@ public class Order implements Serializable {
         this.totalAmount -= amount;
     }
 
+    public List<ProductInCart> getProductInCartList() {
+        return productInCartList;
+    }
+
+    public void setProductInCartList(List<ProductInCart> productInCartList) {
+        this.productInCartList = productInCartList;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -132,5 +147,17 @@ public class Order implements Serializable {
         result = 31 * result + (client != null ? client.hashCode() : 0);
         result = 31 * result + totalAmount;
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", date=" + date +
+                ", delivery='" + delivery + '\'' +
+                ", comments='" + comments + '\'' +
+                ", client=" + client +
+                ", totalAmount=" + totalAmount +
+                '}';
     }
 }

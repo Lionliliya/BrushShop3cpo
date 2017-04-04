@@ -7,6 +7,7 @@ import com.gmail.liliyayalovchenko.Services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -83,6 +84,38 @@ public class OrderController {
         session.setAttribute("cartSize", 0);
         return new ModelAndView("redirect:/cart", model);
     }
+
+    @RequestMapping(value = "/deleteFromCart/{prodName}/{prodQuantity}", method = RequestMethod.GET)
+    public ModelAndView deleteProdFromCart(HttpServletRequest request,
+                                           @PathVariable String prodName,
+                                           @PathVariable int prodQuantity){
+        HttpSession session = request.getSession();
+        checkSession(session);
+        ModelAndView modelAndView = new ModelAndView();
+        List<ProductInCart> productsCart = (ArrayList<ProductInCart>) session
+                .getAttribute("ProductsInCart");
+        List<ProductInCart> updatedList = new ArrayList<>();
+        int totalValue = 0;
+        for (ProductInCart productInCart : productsCart) {
+            if ((!prodName.equals(productInCart.getName())) &&
+                    (productInCart.getQuantity() != prodQuantity)) {
+                updatedList.add(productInCart);
+                totalValue += productInCart.getQuantity()*productInCart.getPrice();
+            }
+        }
+
+        modelAndView.addObject("totalValue", totalValue);
+        modelAndView.addObject("categories", categoryService.getAllCategories());
+        modelAndView.addObject("ProductsInCart", updatedList);
+        modelAndView.addObject("cartSize", updatedList.size());
+        modelAndView.addObject("brands", productService.getAllBrands());
+        session.setAttribute("ProductsInCart", updatedList);
+        session.setAttribute("cartSize", updatedList.size());
+        modelAndView.setViewName("cart");
+        return modelAndView;
+    }
+
+
 
     @RequestMapping(value = "/ordering", method = RequestMethod.POST)
     public ModelAndView ordering(@RequestParam(value = "firstName") String firstName,

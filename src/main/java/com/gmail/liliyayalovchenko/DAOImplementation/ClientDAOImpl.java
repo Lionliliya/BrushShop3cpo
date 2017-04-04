@@ -2,6 +2,7 @@ package com.gmail.liliyayalovchenko.DAOImplementation;
 
 import com.gmail.liliyayalovchenko.DAO.ClientDAO;
 import com.gmail.liliyayalovchenko.Domains.Client;
+import com.gmail.liliyayalovchenko.Domains.FeedBack;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;

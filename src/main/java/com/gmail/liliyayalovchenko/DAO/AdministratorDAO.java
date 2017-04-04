@@ -21,4 +21,6 @@ public interface AdministratorDAO {
 
     void saveAdmin(int id, String role, String password, String username, String domainName, String emailAddress,
                    String phoneNumber1, String phoneNumber2);
+
+    void removeAdmin(int id);
 }

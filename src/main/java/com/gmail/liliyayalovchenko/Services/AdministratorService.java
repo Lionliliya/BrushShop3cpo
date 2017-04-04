@@ -50,4 +50,8 @@ public class AdministratorService {
                 domainName, emailAddress, phoneNumber1, phoneNumber2);
     }
 
+    @Transactional
+    public void removeAdmin(int id) {
+        administratorDAO.removeAdmin(id);
+    }
 }

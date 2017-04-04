@@ -247,7 +247,7 @@
                                                 <td align="center">₴<fmt:formatNumber value="${product.price/((100 - product.product_id.discount)/100)}" type="number" pattern="#"/></td>
                                                 <td align="center">${product.product_id.discount}%</td>
                                                 <td align="center">₴${product.price}</td>
-                                                <td align="center"><a href="/deleteFromCart"><i class="fa fa-trash-o"></i></a>
+                                                <td align="center"><a href="/deleteFromCart/${product.name}/${product.quantity}"><i class="fa fa-trash-o"></i></a>
                                                 <td align="center">₴${product.price * product.quantity}</td>
                                             </tr>
                                         </c:forEach>

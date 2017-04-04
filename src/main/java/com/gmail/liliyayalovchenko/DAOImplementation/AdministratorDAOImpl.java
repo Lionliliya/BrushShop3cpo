@@ -18,6 +18,14 @@ public class AdministratorDAOImpl implements AdministratorDAO {
 
     @Override
     @Transactional(propagation = Propagation.MANDATORY)
+    public void removeAdmin(int id) {
+        Session session = sessionFactory.getCurrentSession();
+        Administrator administrator = session.load(Administrator.class, id);
+        session.delete(administrator);
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.MANDATORY)
     public String getAdminPassword(String role) {
         Session session = sessionFactory.getCurrentSession();
         Administrator administrator = (Administrator) session.createQuery

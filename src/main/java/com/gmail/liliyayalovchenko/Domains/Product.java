@@ -62,7 +62,7 @@ public class Product implements Serializable {
     private int discount;
 
     @LazyCollection(LazyCollectionOption.FALSE)
-    @OneToMany(cascade=CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "product")
     private List<FeedBack> feedBackList;
 
     @Column(name="KeyWord")
@@ -335,5 +335,79 @@ public class Product implements Serializable {
 
     public void removeFeedBack(FeedBack feedBack) {
         this.feedBackList.remove(feedBack);
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", currency='" + currency + '\'' +
+                ", productCategory=" + productCategory +
+                ", brand='" + brand + '\'' +
+                ", amount=" + amount +
+                ", inStock='" + inStock + '\'' +
+                ", isNew=" + isNew +
+                ", discount=" + discount +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Product)) return false;
+
+        Product product = (Product) o;
+
+        if (amount != product.amount) return false;
+        if (discount != product.discount) return false;
+        if (isNew != product.isNew) return false;
+        if (price != product.price) return false;
+        if (brand != null ? !brand.equals(product.brand) : product.brand != null) return false;
+        if (currency != null ? !currency.equals(product.currency) : product.currency != null) return false;
+        if (description != null ? !description.equals(product.description) : product.description != null) return false;
+        if (feedBackList != null ? !feedBackList.equals(product.feedBackList) : product.feedBackList != null)
+            return false;
+        if (image1 != null ? !image1.equals(product.image1) : product.image1 != null) return false;
+        if (image2 != null ? !image2.equals(product.image2) : product.image2 != null) return false;
+        if (image3 != null ? !image3.equals(product.image3) : product.image3 != null) return false;
+        if (image4 != null ? !image4.equals(product.image4) : product.image4 != null) return false;
+        if (inStock != null ? !inStock.equals(product.inStock) : product.inStock != null) return false;
+        if (metaDescription != null ? !metaDescription.equals(product.metaDescription) : product.metaDescription != null)
+            return false;
+        if (metaKeyWords != null ? !metaKeyWords.equals(product.metaKeyWords) : product.metaKeyWords != null)
+            return false;
+        if (metaTitle != null ? !metaTitle.equals(product.metaTitle) : product.metaTitle != null) return false;
+        if (name != null ? !name.equals(product.name) : product.name != null) return false;
+        if (productCategory != null ? !productCategory.equals(product.productCategory) : product.productCategory != null)
+            return false;
+        if (shortDesc != null ? !shortDesc.equals(product.shortDesc) : product.shortDesc != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + price;
+        result = 31 * result + (currency != null ? currency.hashCode() : 0);
+        result = 31 * result + (productCategory != null ? productCategory.hashCode() : 0);
+        result = 31 * result + (brand != null ? brand.hashCode() : 0);
+        result = 31 * result + amount;
+        result = 31 * result + (inStock != null ? inStock.hashCode() : 0);
+        result = 31 * result + (description != null ? description.hashCode() : 0);
+        result = 31 * result + (shortDesc != null ? shortDesc.hashCode() : 0);
+        result = 31 * result + (image1 != null ? image1.hashCode() : 0);
+        result = 31 * result + (image2 != null ? image2.hashCode() : 0);
+        result = 31 * result + (image3 != null ? image3.hashCode() : 0);
+        result = 31 * result + (image4 != null ? image4.hashCode() : 0);
+        result = 31 * result + (isNew ? 1 : 0);
+        result = 31 * result + discount;
+        result = 31 * result + (feedBackList != null ? feedBackList.hashCode() : 0);
+        result = 31 * result + (metaKeyWords != null ? metaKeyWords.hashCode() : 0);
+        result = 31 * result + (metaDescription != null ? metaDescription.hashCode() : 0);
+        result = 31 * result + (metaTitle != null ? metaTitle.hashCode() : 0);
+        return result;
     }
 }

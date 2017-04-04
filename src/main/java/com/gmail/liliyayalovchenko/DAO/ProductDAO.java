@@ -55,4 +55,5 @@ public interface ProductDAO {
     List<Product> getProductsByBrandAndCategory(String brandName, int categoryId);
 
     List<Product> getAllProductsOnSale();
+
 }

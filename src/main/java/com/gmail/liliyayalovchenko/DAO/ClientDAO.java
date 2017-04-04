@@ -26,4 +26,5 @@ public interface ClientDAO {
     void remove(Client client);
 
     Client findClientByPhone(String phone);
+
 }

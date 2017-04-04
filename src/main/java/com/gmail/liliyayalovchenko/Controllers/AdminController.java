@@ -184,6 +184,20 @@ public class AdminController {
        return new ModelAndView("adminLogin", model);
     }
 
+    @RequestMapping(value="/user/remove/{id}",  method = RequestMethod.GET)
+    public ModelAndView removeAdmin(@PathVariable int id,
+                                    HttpServletRequest request) {
+        HttpSession session = request.getSession();
+
+        if (checkStatus(session)) {
+            administratorService.removeAdmin(id);
+        }
+
+        return new ModelAndView("redirect:/admin/parameter");
+    }
+
+
+
     @RequestMapping(value = "/post", method = RequestMethod.GET)
     public ModelAndView allPosts(HttpServletRequest request) {
         HttpSession session = request.getSession();
@@ -444,6 +458,7 @@ public class AdminController {
         HttpSession session = request.getSession();
 
         if (checkStatus(session)) {
+
             productService.remove(id);
             return new ModelAndView("redirect:/admin/catalog", model);
         }
@@ -866,6 +881,7 @@ public class AdminController {
 
         if (checkStatus(session)) {
             Client client = clientService.getClient(id);
+
             clientService.remove(client);
             return new ModelAndView("redirect:/admin/client", model);
         }

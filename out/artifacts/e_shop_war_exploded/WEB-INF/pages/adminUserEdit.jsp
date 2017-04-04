@@ -35,13 +35,6 @@
   <script src="/resources/js/respond.min.js"></script>
 
   <link rel="shortcut icon" href="/resources/favicon.png">
-  <script type="text/javascript">
-    function AlertIt(id) {
-      var answer = confirm("Вы собираетесь удалить пост  № " + id + ". Нажмите OK что бы продолжить.")
-      if (answer)
-        window.location = "http://localhost:8080/admin/post/remove/" + id + "";
-    }
-  </script>
 
 </head>
 

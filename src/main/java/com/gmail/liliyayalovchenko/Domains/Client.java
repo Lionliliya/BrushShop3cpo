@@ -2,12 +2,17 @@ package com.gmail.liliyayalovchenko.Domains;
 
 
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+import org.hibernate.annotations.Proxy;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name="Clients")
+@Proxy(lazy = false)
 public class Client implements Serializable{
 
     @Id
@@ -22,8 +27,13 @@ public class Client implements Serializable{
     @Column(name="Email", nullable = false)
     private String email;
 
-//    @OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="client")
-//    private List<FeedBack> feedBacks;
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @OneToMany(mappedBy = "client", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private List<Order> orderList;
+
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @OneToMany(cascade = CascadeType.REMOVE, mappedBy="client", orphanRemoval = true)
+    private List<FeedBack> feedBacks;
 
     public Client() {}
 
@@ -63,5 +73,57 @@ public class Client implements Serializable{
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<Order> getOrderList() {
+        return orderList;
+    }
+
+    public void setOrderList(List<Order> orderList) {
+        this.orderList = orderList;
+    }
+
+    public List<FeedBack> getFeedBacks() {
+        return feedBacks;
+    }
+
+    public void setFeedBacks(List<FeedBack> feedBacks) {
+        this.feedBacks = feedBacks;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Client)) return false;
+
+        Client client = (Client) o;
+
+        if (email != null ? !email.equals(client.email) : client.email != null) return false;
+        if (firstName != null ? !firstName.equals(client.firstName) : client.firstName != null) return false;
+        if (phoneNumber != null ? !phoneNumber.equals(client.phoneNumber) : client.phoneNumber != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = firstName != null ? firstName.hashCode() : 0;
+        result = 31 * result + (phoneNumber != null ? phoneNumber.hashCode() : 0);
+        result = 31 * result + (email != null ? email.hashCode() : 0);
+        return result;
+    }
+
+    public void removeFeedBack(FeedBack feedBack) {
+        this.feedBacks.remove(feedBack);
     }
 }

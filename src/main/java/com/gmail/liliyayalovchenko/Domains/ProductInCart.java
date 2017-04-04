@@ -1,6 +1,8 @@
 package com.gmail.liliyayalovchenko.Domains;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -15,7 +17,8 @@ public class ProductInCart implements Serializable{
     @Column
     private int product_In_Cart_id;
 
-    @OneToOne (fetch = FetchType.LAZY, cascade = {CascadeType.DETACH, CascadeType.REFRESH, CascadeType.PERSIST, CascadeType.MERGE})
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @OneToOne (cascade = {CascadeType.DETACH, CascadeType.REFRESH, CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "product_id")
     private Product product_id;
 
@@ -30,7 +33,8 @@ public class ProductInCart implements Serializable{
 
     private String currency;
 
-    @ManyToOne (fetch = FetchType.LAZY)
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @ManyToOne ()
     @JoinColumn(name = "order_id", nullable = false)
     private Order order;
 

@@ -21,6 +21,7 @@ public class ProductDAOImpl implements ProductDAO {
     @Autowired
     private SessionFactory sessionFactory;
 
+
     @Override
     @Transactional(propagation = Propagation.MANDATORY)
     public List<Product> getAllProducts() {

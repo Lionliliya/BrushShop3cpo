@@ -129,4 +129,5 @@ public class ProductService {
     public List<Product> getAllProductsOnSale() {
         return productDAO.getAllProductsOnSale();
     }
+
 }
