@@ -148,6 +148,7 @@ public class ProductController {
         modelAndView.addObject("ProductsInCart", session.getAttribute("ProductsInCart"));
         modelAndView.addObject("totalValue", totalAmount(session));
         modelAndView.addObject("cartSize", session.getAttribute("cartSize"));
+        session.setAttribute("totalValue", totalAmount(session));
         modelAndView.setViewName("cart");
         return modelAndView;
     }
@@ -163,6 +164,7 @@ public class ProductController {
         modelAndView.addObject("totalValue", totalAmount(session));
         modelAndView.addObject("cartSize", session.getAttribute("cartSize"));
         modelAndView.setViewName("cart");
+        session.setAttribute("totalValue", totalAmount(session));
         return modelAndView;
     }
 

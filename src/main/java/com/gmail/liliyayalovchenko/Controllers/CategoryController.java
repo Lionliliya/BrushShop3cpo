@@ -296,7 +296,7 @@ public class CategoryController {
 
         generateMailMessage.setText(emailBody.toString(), "utf-8");
         Transport transport = getMailSession.getTransport("smtp");
-        transport.connect("smtp.gmail.com", "service.beautytree", "Mne_24_let");
+        transport.connect("smtp.gmail.com", "service.beautytree", "lion5232");
         transport.sendMessage(generateMailMessage, generateMailMessage.getAllRecipients());
         transport.close();
 

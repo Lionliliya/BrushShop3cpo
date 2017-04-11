@@ -123,8 +123,8 @@ _________________________________________________________ -->
       <div class="col-xs-12" id="customer-orders">
         <div class="row">
           <div class="box">
-            <a href="#details1" class="popover-title"><i class="fa fa-plus"></i> Добавить товар</a>
-            <a href="#details2" class="popover-title"><i class="fa fa-plus"></i> Добавить категорию</a>
+            <a href="#addProduct" class="popover-title"><i class="fa fa-plus"></i> Добавить товар</a>
+            <a href="#addCategory" class="popover-title"><i class="fa fa-plus"></i> Добавить категорию</a>
             <a href="/admin/catalog/product" class="popover-title"> Все товары</a>
           </div>
         </div>
@@ -175,7 +175,7 @@ _________________________________________________________ -->
         </div>
 
         <div class="row">
-        <div class="col-xs-6" id="details1">
+        <div class="col-xs-6" id="addProduct">
           <div class="box">
             <h3>Добавить товар</h3>
             <form role = "form" action="/admin/catalog/product/add" method="post">
@@ -258,10 +258,16 @@ _________________________________________________________ -->
               <div class="form-group">
                 <blockquote>
                   <label><strong>Новый товар</strong></label>
-                  <input type="radio" class="form-control" name="isNew"
+                  <div class="row">
+                    <div class="col-sm-2 col-sm-offset-4">
+                      <input type="radio" name="isNew"
                              value="${true}" required/> Да
-                  <input type="radio" class="form-control active" name="isNew"
+                      </div>
+                    <div class="col-sm-2">
+                      <input type="radio" class="active" name="isNew"
                              value="${false}" required/> Нет
+                      </div>
+                    </div>
                 </blockquote>
               </div>
               <div class="form-group">
@@ -331,7 +337,7 @@ _________________________________________________________ -->
           </div>
         </div>
 
-        <div class="col-xs-6" id="details2">
+        <div class="col-xs-6" id="addCategory">
           <div class="box">
             <h3>Создать категорию</h3>
             <form role = "form" action="/admin/catalog/add" method="post">

@@ -194,7 +194,7 @@
                         </li>
                         <li><a href="#">Твой заказ</a>
                         </li>
-                        <li>Заказ номер #${order.id}</li>
+                        <li>Заказ номер #10${order.id}</li>
                     </ul>
 
                 </div>
@@ -221,7 +221,7 @@
 
                 <div class="col-md-9" id="customer-order">
                     <div class="box">
-                        <h1>Заказ #${order.id}</h1>
+                        <h1>Заказ #10${order.id}</h1>
 
                         <p class="lead"><c:out value="${client.firstName}"/>, твой заказ #10${order.id} оформлен <strong>${date}</strong> и сейчас <strong>обрабатывается.</strong>.</p>
                         <p class="text-muted">Если у тебя есть любые вопросы, <a href="/contacts">свяжись с нами</a>, мы будем рады тебе помочь.</p>

@@ -228,12 +228,13 @@ _________________________________________________________ -->
 
           <div class="form-group">
             <label for="dateFeedBack">Дата в формате dd.mm.yyyy hh:mm Напр.: 22.05.2016 17:46</label>
-            <input type="text" id="dateFeedBack" class="form-control" name="date" required/>
+            <input type="text" id="dateFeedBack" class="form-control" name="date" required
+                   pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4} ([01]?[0-9]|2[0-3]):[0-5][0-9]"/>
           </div>
 
           <div class="form-group">
             <label for="rate">Оценка от 1 до 5</label>
-            <input type="number" id="rate" class="form-control" name="evaluation" required pattern="[0-5]{1}"/>
+            <input type="number" id="rate" min="1" max="5" step="1" class="form-control" name="evaluation" required/>
           </div>
 
           <div class="form-group">

@@ -68,6 +68,7 @@ public class OrderController {
         modelAndView.addObject("brands", productService.getAllBrands());
         session.setAttribute("ProductsInCart", productsCart);
         session.setAttribute("cartSize", productsCart.size());
+        session.setAttribute("totalValue", totalValue);
 
         modelAndView.setViewName("cart");
         return modelAndView;
@@ -82,6 +83,7 @@ public class OrderController {
         session.removeAttribute("cartSize");
         session.setAttribute("ProductsInCart", new ArrayList<ProductInCart>());
         session.setAttribute("cartSize", 0);
+        session.setAttribute("totalValue", 0);
         return new ModelAndView("redirect:/cart", model);
     }
 
@@ -94,23 +96,34 @@ public class OrderController {
         ModelAndView modelAndView = new ModelAndView();
         List<ProductInCart> productsCart = (ArrayList<ProductInCart>) session
                 .getAttribute("ProductsInCart");
-        List<ProductInCart> updatedList = new ArrayList<>();
-        int totalValue = 0;
+//        List<ProductInCart> updatedList = new ArrayList<>();
+        System.out.println(prodName + "Product Name!!!");
+        System.out.println(prodQuantity + "ProductQuant!!!");
+        int totalValue = (int) session.getAttribute("totalValue");
         for (ProductInCart productInCart : productsCart) {
-            if ((!prodName.equals(productInCart.getName())) &&
-                    (productInCart.getQuantity() != prodQuantity)) {
-                updatedList.add(productInCart);
-                totalValue += productInCart.getQuantity()*productInCart.getPrice();
+            if (prodName.equals(productInCart.getName()) && prodQuantity == productInCart.getQuantity()) {
+                productsCart.remove(productInCart);
+                totalValue -= (productInCart.getQuantity() * productInCart.getPrice());
+                break;
             }
         }
 
+
+//        for (ProductInCart productInCart : productsCart) {
+//            if ((!prodName.equals(productInCart.getName())) &&
+//                    (productInCart.getQuantity() != prodQuantity)) {
+//                updatedList.add(productInCart);
+//                totalValue += productInCart.getQuantity()*productInCart.getPrice();
+//            }
+//        }
+
         modelAndView.addObject("totalValue", totalValue);
         modelAndView.addObject("categories", categoryService.getAllCategories());
-        modelAndView.addObject("ProductsInCart", updatedList);
-        modelAndView.addObject("cartSize", updatedList.size());
+        modelAndView.addObject("ProductsInCart", productsCart);
+        modelAndView.addObject("cartSize", productsCart.size());
         modelAndView.addObject("brands", productService.getAllBrands());
-        session.setAttribute("ProductsInCart", updatedList);
-        session.setAttribute("cartSize", updatedList.size());
+        session.setAttribute("ProductsInCart", productsCart);
+        session.setAttribute("cartSize", productsCart.size());
         modelAndView.setViewName("cart");
         return modelAndView;
     }
@@ -133,10 +146,9 @@ public class OrderController {
         Client client = clientService.findClientByPhone(phoneNumber, email);
         if (client == null) {
             client = new Client(firstName, phoneNumber, email);
+            clientService.addClient(client);
         }
 
-        System.out.println("-----------Name " + firstName + " -------------------");
-        clientService.addClient(client);
         int amount = 0;
         for (ProductInCart aProductsCart1 : productsInCart) {
             amount += aProductsCart1.getPrice()*aProductsCart1.getQuantity();
@@ -160,6 +172,7 @@ public class OrderController {
         session.removeAttribute("cartSize");
         session.setAttribute("ProductsInCart", new ArrayList<>());
         session.setAttribute("cartSize", 0);
+        session.setAttribute("totalValue", amount);
         modelAndView.setViewName("ordering");
         return modelAndView;
     }
@@ -170,13 +183,12 @@ public class OrderController {
         mailServerProperties.put("mail.smtp.port", "587");
         mailServerProperties.put("mail.smtp.auth", "true");
         mailServerProperties.put("mail.smtp.starttls.enable", "true");
-//        mailServerProperties.put("mail.smtp.ssl.trust", "mail.beautytreeshop.net");
 
         Session getMailSession = Session.getDefaultInstance(mailServerProperties, null);
         MimeMessage generateMailMessage = new MimeMessage(getMailSession);
         generateMailMessage.setHeader("Content-Type", "text/html; charset=UTF-8");
         generateMailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(clientEmail));
-        generateMailMessage.setSubject("Заказ № " + orderId,  "utf-8");
+        generateMailMessage.setSubject("Заказ № 10" + orderId,  "utf-8");
         StringBuilder emailBody = new StringBuilder();
         emailBody.append("<div class=\"container\">");
         emailBody.append("<div class=\"col-md-9\" id=\"customer-order\">");
@@ -188,7 +200,7 @@ public class OrderController {
                         "\n" +
                         "<p class=\"lead\">Срок доставки составляет от 1 до 3 рабочих дней.</p>\n");
         emailBody.append("<p class=\"text-muted\">" +
-                "Номер заказа: " + orderId + "\n</p>" +
+                "Номер заказа: 10" + orderId + "\n</p>" +
                 "<p>Доставка: " +  delivery + "\n</p>" +
                 "<p>Способ оплаты: Наличными при доставке." +
                 "</p>");

@@ -285,13 +285,13 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="firstname">Имя</label>
-                                        <input type="text" class="form-control" name="firstName" id="firstname" pattern="[A-Za-zА-Яа-яЁё-Іі-Її ]+" required>
+                                        <input type="text" class="form-control" name="firstName" id="firstname" pattern="[A-Za-zА-Яа-яЁёІіЇї ]+" required>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="lastname">Фамилия</label>
-                                        <input type="text" class="form-control" name="secondName" id="lastname" pattern="[A-Za-zА-Яа-яЁё-Іі-Її ]+" required>
+                                        <input type="text" class="form-control" name="secondName" id="lastname" pattern="[A-Za-zА-Яа-яЁёІіЇї ]+" required>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -303,7 +303,7 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="subject">Тема письма</label>
-                                        <input type="text" class="form-control" name="subject" id="subject">
+                                        <input type="text" class="form-control" name="subject" id="subject" pattern="[A-Za-zА-Яа-яЁёІіЇї ]+" required>
                                     </div>
                                 </div>
                                 <div class="col-sm-12">

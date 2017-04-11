@@ -242,7 +242,7 @@
                                                     </a>
                                                 </td>
                                                 <td align="center">
-                                                    <input type="number" name="quantity" value="${product.quantity}" class="form-control">
+                                                    <input type="number" min="1" name="quantity" value="${product.quantity}" class="form-control">
                                                 </td>
                                                 <td align="center">₴<fmt:formatNumber value="${product.price/((100 - product.product_id.discount)/100)}" type="number" pattern="#"/></td>
                                                 <td align="center">${product.product_id.discount}%</td>
@@ -269,7 +269,7 @@
                                 </div>
 
                                 <div class="pull-left">
-                                    <a href="/catalog"  onclick="history.back()" class="btn btn-default"><i class="fa fa-chevron-left"></i> Продолжить покупки</a>
+                                    <a href="/catalog" class="btn btn-default"><i class="fa fa-chevron-left"></i> Продолжить покупки</a>
                                 </div>
 
                             </div>
