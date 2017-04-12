@@ -269,18 +269,18 @@ _________________________________________________________ -->
           <p class="lead">Получи вдохновение для лучших образов от мировых брендов</p>
           <div id="get-inspired" class="owl-carousel owl-theme">
             <div class="item">
-              <a href="#">
-                <img src="/resources/img/getinspired1.jpg" alt="Кисти для макияжа купить Киев" class="img-responsive">
+              <a href="/catalog">
+                <img src="/resources/img/sliderBrush1.png" alt="Кисти для макияжа купить Киев" class="img-responsive">
               </a>
             </div>
             <div class="item">
-              <a href="#">
-                <img src="/resources/img/getinspired2.jpg" alt="Кисти для макияжа купить Киев" class="img-responsive">
+              <a href="/catalog">
+                <img src="/resources/img/sliderBrush2.png" alt="Кисти для макияжа купить Киев" class="img-responsive">
               </a>
             </div>
             <div class="item">
-              <a href="#">
-                <img src="/resources/img/getinspired3.jpg" alt="Кисти для макияжа купить Киев" class="img-responsive">
+              <a href="/catalog">
+                <img src="/resources/img/sliderBrush3.png" alt="Кисти для макияжа купить Киев" class="img-responsive">
               </a>
             </div>
           </div>
