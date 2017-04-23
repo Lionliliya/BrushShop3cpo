@@ -235,7 +235,7 @@ _________________________________________________________ -->
 
                         <div class="form-group">
                             <label for="product">Выбирите товары</label>
-                            <select class="form-control" id="product" name="product" multiple required>
+                            <select class="form-control" id="product" name="product" required>
                                 <c:forEach items="${products}" var="product">
                                     <option value="${product.id}">${product.name}</option>
                                 </c:forEach>

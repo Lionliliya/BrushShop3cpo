@@ -193,7 +193,7 @@ public class OrderController {
         emailBody.append("<div class=\"container\">");
         emailBody.append("<div class=\"col-md-9\" id=\"customer-order\">");
         emailBody.append("<div class=\"box\">");
-        emailBody.append("<img src=\"http://localhost:8080/resources/img/logo.png\">");
+        emailBody.append("<img src=\"http://beautytreeshop.net/resources/img/logo.png\">");
 
         emailBody.append("<h2>Здравствуйте, " + clientName + "!</h2>");
         emailBody.append("<p class=\"lead\">Ваш заказ подтвержден и передан для формирования на склад. </p>\n" +

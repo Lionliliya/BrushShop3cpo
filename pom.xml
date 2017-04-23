@@ -6,7 +6,7 @@
 
     <groupId>com.gmail.liliyayalovchenko</groupId>
     <artifactId>e-shop</artifactId>
-    <version>5-encoding</version>
+    <version>6.1</version>
     <packaging>war</packaging>
 
     <build>

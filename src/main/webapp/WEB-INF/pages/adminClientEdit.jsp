@@ -123,7 +123,7 @@ _________________________________________________________ -->
       <div class="col-md-8 col-md-offset-2" id="customer-order">
         <div class="box">
 
-          <form role="form" action="/admin/client/save/${client.id}" method="post">
+          <form role="form" action="/admin/clients/save" method="post">
             <div class="form-group">
               <label for="clientId">№ клиента</label>
               <input type="text" id="clientId" class="form-control" name="id" value="${client.id}" readonly>
