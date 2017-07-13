@@ -86,11 +86,11 @@ public class AdminController {
         if (checkStatus(session)){
             session.removeAttribute("status");
             modelAndView.addObject("cartSize", session.getAttribute("cartSize"));
-            modelAndView.setViewName("index");
+            modelAndView.setViewName("adminLogin");
             return modelAndView;
         }
 
-        modelAndView.setViewName("index");
+        modelAndView.setViewName("adminLogin");
         return modelAndView;
     }
 
