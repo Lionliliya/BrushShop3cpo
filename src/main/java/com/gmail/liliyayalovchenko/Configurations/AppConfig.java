@@ -208,6 +208,11 @@ public class AppConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addResourceHandlers(final ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+        registry.addResourceHandler("/sitemap.xml").addResourceLocations("/sitemap.xml");
+        registry.addResourceHandler("/googlec7d22bd3cd2e8a87.html").addResourceLocations("/googlec7d22bd3cd2e8a87.html");
+        registry.addResourceHandler("/robots.txt").addResourceLocations("/robots.txt");
     }
+
+
     }
 

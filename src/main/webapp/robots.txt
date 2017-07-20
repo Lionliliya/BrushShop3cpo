@@ -1,0 +1,14 @@
+User-agent: Yandex
+Disallow: /admin
+Host: www.beautytreeshop.net
+
+User-agent: Googlebot
+Disallow: /admin
+
+User-agent: *
+Disallow: /admin
+Crawl-delay: 30
+Sitemap: http://beautytreeshop.net/sitemap.xml
+
+
+
